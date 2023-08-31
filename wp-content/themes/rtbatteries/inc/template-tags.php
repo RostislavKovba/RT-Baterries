@@ -163,3 +163,25 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+/**
+ * Contact info
+ */
+function rtb_contact_info( $field ) {
+
+	if ( !$field ) return;
+
+	switch( $field ) {
+
+		case 'email' :
+			$email = get_field('email', 'contact');
+			echo '<a href="mailto:'. $email .'">'. $email .'</a>';
+			break;
+
+		case 'phone' :
+            $phone = get_field('phone', 'contact');
+            echo '<a href="tel:'. $phone .'">'. $phone .'</a>';
+
+			break;
+	};
+}

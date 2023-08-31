@@ -15,8 +15,6 @@
 get_header();
 ?>
 
-
-
 <section class="scroll-y">
     <p class="title title_3 center"><?php the_title(); ?></p>
     <div class="container">

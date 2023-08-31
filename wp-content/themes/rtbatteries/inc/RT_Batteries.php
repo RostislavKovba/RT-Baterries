@@ -6,60 +6,30 @@
 class RT_Batteries
 {
 	private string $version = '1.0.0';
+	private string $domain = 'rtbatteries';
 
 	public function __construct() {
-		$this->defines();
-		$this->init_post_types();
+		$this->define_constants();
+		$this->options_page_init();
 
 		add_action( 'after_setup_theme', [$this, 'setup'] );
-		add_action( 'after_setup_theme', [$this, 'content_width'], 0 );
-		add_action( 'widgets_init', [$this, 'widgets_init'] );
-		add_action( 'wp_enqueue_scripts', [$this, 'scripts'] );
+//		add_action( 'widgets_init', [$this, 'widgets_init'] );
+		add_action( 'wp_enqueue_scripts', [$this, 'scripts_init'] );
 	}
 
 	public function setup() {
-		if ( ! defined( '_S_VERSION' ) ) {
-			// Replace the version number of the theme on each release.
-			define( '_S_VERSION', '1.0.0' );
-		}
-
 		/*
-			* Make theme available for translation.
-			* Translations can be filed in the /languages/ directory.
-			* If you're building a theme based on rtbatteries, use a find and replace
-			* to change 'rtbatteries' to the name of your theme in all the template files.
-			*/
-		load_theme_textdomain( 'rtbatteries', get_template_directory() . '/languages' );
+		* Make theme available for translation.
+		* Translations can be filed in the /languages/ directory.
+		* If you're building a theme based on rtbatteries, use a find and replace
+		* to change 'rtbatteries' to the name of your theme in all the template files.
+		*/
+		load_theme_textdomain( _S_DOMAIN, get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
-		/*
-			* Let WordPress manage the document title.
-			* By adding theme support, we declare that this theme does not use a
-			* hard-coded <title> tag in the document head, and expect WordPress to
-			* provide it for us.
-			*/
 		add_theme_support( 'title-tag' );
-
-		/*
-			* Enable support for Post Thumbnails on posts and pages.
-			*
-			* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-			*/
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'rtbatteries' ),
-			)
-		);
-
-		/*
-			* Switch default core markup for search form, comment form, and comments
-			* to output valid HTML5.
-			*/
 		add_theme_support(
 			'html5',
 			array(
@@ -72,8 +42,6 @@ class RT_Batteries
 				'script',
 			)
 		);
-
-		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
 			apply_filters(
@@ -84,15 +52,7 @@ class RT_Batteries
 				)
 			)
 		);
-
-		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
 		add_theme_support(
 			'custom-logo',
 			array(
@@ -102,44 +62,73 @@ class RT_Batteries
 				'flex-height' => true,
 			)
 		);
+
+		register_nav_menus(
+			[
+				'menu-primary'  => esc_html__( 'Primary', _S_DOMAIN ),
+				'menu-mobile'   => esc_html__( 'Mobile', _S_DOMAIN ),
+				'menu-shop'     => esc_html__( 'Shop', _S_DOMAIN ),
+				'menu-footer-1' => esc_html__( 'Footer 1', _S_DOMAIN ),
+				'menu-footer-2' => esc_html__( 'Footer 2', _S_DOMAIN ),
+			]
+		);
 	}
 
-	public function defines() {
-		if (defined('_S_VERSION')) return;
+	public function define_constants() {
 		define( '_S_VERSION', $this->version );
-	}
-
-	public function content_width() {
-		$GLOBALS['content_width'] = apply_filters( 'rtbatteries_content_width', 640 );
+		define( '_S_DOMAIN',  $this->domain );
+		define( 'ASSETS_CSS', THEME_URL.'/assets/css/' );
+		define( 'ASSETS_JS',  THEME_URL.'/assets/js/' );
+		define( 'ASSETS_IMG', THEME_URL.'/assets/images/' );
 	}
 
 	public function widgets_init() {
 		register_sidebar(
-			array(
-				'name'          => esc_html__( 'Sidebar', 'rtbatteries' ),
+			[
+				'name'          => esc_html__( 'Sidebar', _S_DOMAIN ),
 				'id'            => 'sidebar-1',
-				'description'   => esc_html__( 'Add widgets here.', 'rtbatteries' ),
+				'description'   => esc_html__( 'Add widgets here.', _S_DOMAIN ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 	}
 
-	public function scripts() {
+	public function scripts_init() {
 		wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), _S_VERSION );
-		wp_enqueue_style( 'rtbatteries-style', THEME_URL . '/assets/css/app.css', array(), _S_VERSION );
+		wp_enqueue_style( 'rtb-style', ASSETS_CSS . 'app.css', array(), _S_VERSION );
 
 		wp_enqueue_script('jquery-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), _S_VERSION, true);
-		wp_enqueue_script( 'rtbatteries-script', THEME_URL . '/assets/js/all.js', array('jquery-script'), _S_VERSION, true );
+		wp_enqueue_script( 'rtb-script', ASSETS_JS . 'all.js', array('jquery-script'), _S_VERSION, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
 
-	public function init_post_types() {
-		require THEME_DIR . '/inc/RT_Post_Type.php';
+	public function options_page_init() {
+		if ( !function_exists( 'acf_add_options_page' ) ) return;
+
+		acf_add_options_page([
+			'page_title' => 'Main contact info',
+			'menu_title' => 'Contact info',
+			'menu_slug'  => 'contact',
+			'post_id'    => 'contact',
+			'capability' => 'edit_posts',
+			'icon_url'   => 'dashicons-phone',
+			'redirect'   => false,
+			'position'   => 29,
+		]);
+
+		acf_add_options_page([
+			'page_title' => 'Theme General Settings',
+			'menu_title' => 'Theme Settings',
+			'menu_slug'  => 'theme-general-settings',
+			'post_id'    => 'theme-general-settings',
+			'capability' => 'edit_posts',
+			'redirect'   => false,
+		]);
 	}
 }

@@ -11,8 +11,6 @@
 
 ?>
 
-</div><!-- -->
-
 <footer class="footer ">
     <div class="container newslatter_mobile">
         <div class="newslatter">
@@ -65,51 +63,27 @@
         </div>
 
         <div class="column contacts_menu">
-            <p class="label">About</p>
-            <ul>
-                <li>
-                    <a href="#">My account</a>
-                </li>
-                <li>
-                    <a href="#">Contacts</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-                <li>
-                    <a href="#">Recycling</a>
-                </li>
-                <li>
-                    <a href="#">wholesale</a>
-                </li>
-                <li>
-                    <a href="#">Safety Data Sheets</a>
-                </li>
-            </ul>
+            <p class="label"><?php echo wp_get_nav_menu_name('menu-footer-1'); ?></p>
+	        <?php
+	        wp_nav_menu([
+		        'theme_location'  => 'menu-footer-1',
+		        'menu_id'         => 'menu-footer-1',
+		        'container'       => false,
+		        'menu_class'      => '',
+	        ]);
+	        ?>
         </div>
 
         <div class="column contacts_menu">
-            <p class="label">Policies</p>
-            <ul>
-                <li>
-                    <a href="#">Returns</a>
-                </li>
-                <li>
-                    <a href="#">Shipping</a>
-                </li>
-                <li>
-                    <a href="#">Warranty</a>
-                </li>
-                <li>
-                    <a href="#">Privacy policy</a>
-                </li>
-                <li>
-                    <a href="#">Terms Of Use</a>
-                </li>
-            </ul>
+            <p class="label"><?php echo wp_get_nav_menu_name('menu-footer-2'); ?></p>
+	        <?php
+	        wp_nav_menu([
+		        'theme_location'  => 'menu-footer-2',
+		        'menu_id'         => 'menu-footer-2',
+		        'container'       => false,
+		        'menu_class'      => '',
+	        ]);
+	        ?>
         </div>
 
         <div class="column contacts_column">
@@ -127,19 +101,20 @@
                     <svg viewBox="0 0 28 29" fill="none">
                         <path d="M14.0609 6.60333L13.8081 6.17622C13.6376 5.88765 13.5525 5.74342 13.4622 5.63281C12.7963 4.81729 11.5094 4.60813 10.3383 5.12462C10.1795 5.19468 10.0013 5.29526 9.64443 5.49799C7.69937 6.69629 7.54538 10.3045 7.62141 10.8318C7.62141 10.8318 7.50166 12.6027 9.85774 16.5903C12.2138 20.5778 14.0926 21.7844 14.0926 21.7844C15.1562 22.5362 17.7902 23.775 19.8178 22.7164C20.1746 22.5137 20.3529 22.4122 20.4939 22.3119C21.5334 21.5726 21.9881 20.3735 21.5977 19.4014C21.5448 19.2696 21.4598 19.1252 21.2892 18.8366L21.0369 18.4095C20.7624 17.9448 20.5805 17.6376 20.4081 17.4193C20.2611 17.2331 20.0364 17.1139 19.7957 17.0229C18.7555 16.6298 16.5894 17.2358 15.5004 16.9244C15.3877 16.8922 15.2782 16.8528 15.1723 16.8069C15.064 16.7599 14.961 16.7067 14.8699 16.6388C14.5864 16.4276 13.9217 15.8675 13.3464 14.8938C12.6017 13.6334 12.6092 12.704 12.6096 12.6794L12.6097 12.6778C12.6156 12.3889 12.6698 12.099 12.767 11.8157C13.1257 10.7698 14.6466 9.24834 14.7142 8.20459C14.7242 8.0501 14.7208 7.89631 14.6729 7.7569C14.5761 7.47552 14.3821 7.1469 14.0609 6.60333Z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <a href="tel:856-336-8157" target="_blank">856-336-8157</a>
+	                <?php rtb_contact_info('phone'); ?>
                 </li>
                 <li>
                     <svg viewBox="0 0 38 39" fill="none">
                         <path d="M11.8754 13.6328L15.8386 16.275C17.3712 17.2967 18.1375 17.8075 19.0004 17.8075C19.8633 17.8075 20.6296 17.2967 22.1622 16.275L26.1254 13.6328M16.7204 29.7828H22.2304C25.4227 29.7828 27.0188 29.7828 28.2381 29.1616C29.3107 28.6151 30.1827 27.7431 30.7291 26.6706C31.3504 25.4513 31.3504 23.8551 31.3504 20.6628V18.0028C31.3504 14.8105 31.3504 13.2144 30.7291 11.9951C30.1827 10.9225 29.3107 10.0506 28.2381 9.50408C27.0188 8.88281 25.4227 8.88281 22.2304 8.88281H16.7204C13.5281 8.88281 10.9819 8.88281 9.76265 9.50408C8.69012 10.0506 7.81813 10.9225 7.27165 11.9951C6.65039 13.2144 6.65039 14.8105 6.65039 18.0028V20.6628C6.65039 23.8551 6.65039 25.4513 7.27165 26.6706C7.81813 27.7431 8.69012 28.6151 9.76265 29.1616C10.9819 29.7828 13.5281 29.7828 16.7204 29.7828Z" stroke="#333333" stroke-width="2.66667" stroke-linecap="round"/>
                     </svg>
-                    <a href="email:support@rometechbatteries.com" target="_blank">support@rometechbatteries.com</a>
+	                <?php rtb_contact_info('email'); ?>
                 </li>
                 <li>
                     <svg viewBox="0 0 28 29" fill="none">
                         <path d="M6.07795 11.6996C5.76841 12.5754 5.59998 13.5178 5.59998 14.4996C5.59998 19.1388 9.36078 22.8996 14 22.8996C18.6392 22.8996 22.4 19.1388 22.4 14.4996C22.4 13.5178 22.2315 12.5754 21.922 11.6996M6.07795 11.6996C7.23109 8.43707 10.3426 6.09961 14 6.09961C17.6574 6.09961 20.7689 8.43707 21.922 11.6996M6.07795 11.6996H21.922M6.07795 17.2996H21.922M14.7 6.12836C14.7 6.12836 17.5 9.59961 17.5 14.4996C17.5 19.3996 14.7 22.8996 14.7 22.8996M13.3 6.12836C13.3 6.12836 10.5 9.59961 10.5 14.4996C10.5 19.3996 13.3 22.8709 13.3 22.8709" stroke="#333333" stroke-width="1.5"/>
                     </svg>
-                    <a href="rometechbatteries.com" target="_blank">rometechbatteries.com</a>
+
+                    <a href="https://rometechbatteries.com" target="_blank">rometechbatteries.com</a>
                 </li>
             </ul>
         </div>
@@ -153,9 +128,6 @@
 
 <!-- custom cursor -->
 <div class="popup"></div>
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-<!--<script async src="/wp-content/themes/rtbatteries/assets/js/all.js"></script>-->
 
 <?php wp_footer(); ?>
 

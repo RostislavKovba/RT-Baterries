@@ -9,7 +9,7 @@
 
 ?>
 
-<a href="/" class="item-general">
+<a href="<?php the_permalink(); ?>" class="item-general">
     <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
     <div class="heading">
         <p><?php the_title(); ?></p>
