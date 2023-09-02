@@ -1,0 +1,138 @@
+form{
+    position: relative;
+    --input-height: 50px;
+    &.extra{
+      @include breakpoint(sm) {
+        --input-height: 35px;
+      }
+      .btn-primary{
+        width: 130px;
+        height: var(--input-height);
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+      }
+      input, textarea{
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.045em;
+        width: 100%;
+        height: var(--input-height);
+        outline: none;
+        background: none;
+        border: 1px solid var(--color_primary);
+        border-radius: var(--radius_3);
+        padding: 0 var(--spacing-4);
+      }
+    }
+
+    .row{
+      position: relative;
+      width: 48%;
+      @include breakpoint(sm) {
+        width: 100%;
+        margin-bottom: var(--spacing-4);
+      }
+      &-full{
+        width: 100%;
+      }
+      &-radio{
+        @include flex-between();
+        justify-content: flex-start;
+      }
+      &.focused{
+        label{
+          color: var(--font-color_transition);
+          transform: translateY(calc(var(--spacing-2) * -1))
+        }
+        &.row-radio{
+          label{
+            transform: none;
+          }
+        }
+      }
+      &-select{
+        label{
+          margin-bottom: var(--spacing-2);
+        }
+      }
+    }
+    fieldset {
+      @include flex-between();
+      position: relative;
+      margin-bottom: var(--spacing-6);
+      width: 100%;
+      @include breakpoint(sm) {
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+    }
+    label{
+      @include transition();
+      @include font-style('Poppins', 600, 20px, 30px);
+      position: relative;
+      display: block;
+      @include breakpoint(xxl) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include breakpoint(md) {
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+    input, textarea, &::placeholder{
+      @include font-style('Roboto', 300, 24px, 28.13px);
+      width: 100%;
+      height: var(--input-height);
+      outline: none;
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--color_primary);
+      @include breakpoint(xxl) {
+        font-size: 18px;
+        line-height: 21px;
+      }
+      @include breakpoint(md) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--color_primary);
+      + label{
+        margin-left: var(--spacing-2);
+      }
+    }
+
+    .nice-select{
+      width: 100%;
+      border:none;
+      border-bottom:1px solid var(--color_primary);
+      border-radius: 0;
+      padding-left: 0;
+      .list{
+        width: 100%;
+      }
+    }
+    
+    textarea{
+      height: auto;
+      margin-top: var(--spacing-4);
+    }
+    .btn-primary {
+      margin-left: auto;
+      margin-top: var(--spacing-6);
+      @include breakpoint(md) {
+        width: 100%;
+      }
+    }
+  }

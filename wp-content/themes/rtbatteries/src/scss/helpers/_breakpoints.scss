@@ -1,0 +1,56 @@
+$break-xxl: 1650px;
+$break-xxll: 1440px;
+$break-xl: 1200px;
+$break-lg: 992px;
+$break-md: 768px;
+$break-sm: 576px;
+$break-xs: 375px;
+
+$break-xxl-extra: 1750px;
+
+$base_spacing: 15px;
+
+html, body{
+  --container: 1720px;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+  padding: $base_spacing - 10 $base_spacing;
+  box-sizing: border-box;
+  &.zero-x{
+    padding: $base_spacing - 10 0;
+  }
+  &.zero-y{
+    padding: 0 $base_spacing;
+  }
+  &.zero{
+    padding: 0;
+  }
+  @include breakpoint(xxl-extra) {
+    --container: 1600px;
+  }
+  @include breakpoint(xxl) {
+    --container: 1450px;
+  }
+  @include breakpoint(xxll) {
+    --container: 1190px;
+  }
+  @include breakpoint(xl) {
+    --container: 990px;
+  }
+  @include breakpoint(lg) {
+    --container: 830px;
+  }
+  @include breakpoint(md) {
+    --container: 768px;
+  }
+  @include breakpoint(sm) {
+    --container: 568px;
+  }
+  @include breakpoint(xs) {
+    --container: 100%;
+  }
+}

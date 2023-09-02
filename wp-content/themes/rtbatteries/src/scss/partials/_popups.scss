@@ -1,0 +1,187 @@
+@import '../helpers/helpers';
+
+.overlay{
+  position: fixed;
+  z-index: 20;
+  top:0;
+  left: 0;
+  background: var(--color_secondary_ghost_2);
+  backdrop-filter: blur(30px);
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  opacity: 0;
+  padding: var(--spacing-12);
+  animation: fade-in var(--time3-2) var(--ease_out_primary) forwards;
+  overflow: scroll;
+  @include breakpoint(lg) {
+    padding: var(--spacing-6); 
+  }
+  @include breakpoint(md) {
+    padding: var(--spacing-4); 
+  }
+  &.opened{
+    display: block;
+    .wrapper{
+      display: block;
+    }
+  }
+  &.blog-popup{
+    .heading{
+      background-image: url('../images/Mask_group.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &.about-popup{
+    .wrapper{
+      animation: bounce-up var(--time3-2) var(--time2) var(--ease_out_primary) forwards;
+    }
+    .btn-round{
+      box-shadow: none;
+    }
+  }
+
+  .heading{
+    padding: calc(var(--spacing-8) * 2) var(--spacing-12);
+    position: relative;
+    @include breakpoint(lg) {
+      padding: calc(var(--spacing-6) * 2) var(--spacing-6); 
+    }
+    @include breakpoint(md) {
+      padding: calc(var(--spacing-4) * 2) var(--spacing-4);
+    }
+    img{
+      margin: 0 auto;
+    }
+    .team_logo{
+      max-width: 80%;
+    }
+  }
+
+  .wrapper{
+    position: relative;
+    border-radius: var(--radius_3);
+    overflow: hidden;
+    box-shadow: 0px 0px 30px 0px  var(--color_primary_ghost_2);
+    max-width: 1150px;
+    z-index: 3;
+    margin: var(--spacing-8) auto;
+    display: none;
+    transform: scale(0.6);
+    transform: translateY(50%);
+    transform-origin: bottom center;
+    transition: transform 400ms ease-in-out;
+    animation: bounce-up var(--time3-2) var(--time4) var(--ease_out_primary) forwards;
+    @include breakpoint(xxl) {
+      max-width: 1000px; 
+    }
+    @include breakpoint(lg) {
+      max-width: 850px;  
+    }
+  }
+
+  .content{
+    margin: var(--spacing-12);
+    height: 100%;
+    @include breakpoint(lg) {
+      margin: var(--spacing-6); 
+    }
+    @include breakpoint(md) {
+      margin: var(--spacing-4); 
+    }
+  }
+  .btn-round{
+    position: absolute;
+    right:var(--spacing-12);
+    top: var(--spacing-12);
+    @include breakpoint(lg) {
+      right: var(--spacing-6); 
+      top: var(--spacing-6); 
+    }
+    @include breakpoint(md) {
+      right: var(--spacing-4); 
+      top: var(--spacing-4); 
+    }
+    &:hover{
+      transform: scale(0.8);
+    }
+  }
+  h1.title{
+    text-align: left;
+    transform: translateY(90%);
+    @include breakpoint(xxll) {
+      transform: translateY(50%);
+    }
+  }
+}
+
+.popup{
+    --header: 75px;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - var(--header));
+    background: rgba(0, 0, 0, 0.282);
+    z-index: 19;
+    left: 0;
+    top: var(--header);
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+    @include breakpoint(md) {
+      display: flex;
+      align-items: flex-end;
+      justify-content: stretch;
+    }
+    &.opened{
+      opacity: 1;
+      pointer-events: all;
+    }
+}
+
+// cursors
+
+.cursor {
+  @include transition();
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid rgb(104, 104, 104);
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%) scale(0);
+  z-index: 21;
+  opacity: 0;
+}
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: black;
+  opacity: .2;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width .3s, height .3s, opacity .3s, scale .3s;
+  z-index: 21;
+}
+
+.hover {
+  transform: translate(calc(-50% + 15px), -50%) scale(1);
+  background-color: var(--font-color_primary);
+  opacity: 0.5;
+  + .cursor2{
+    opacity: 0;
+  }
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: .5;
+}

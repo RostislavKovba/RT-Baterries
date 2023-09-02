@@ -1,0 +1,47 @@
+@import '../helpers/helpers';
+
+.page-404{
+    + footer{
+        display: none;
+    }
+    .wrapper{
+        padding-bottom: calc(var(--spacing-12) * 2) calc(var(--spacing-12) * 2) 0;
+        .img-wrap{
+            @include flex-center();
+            img{
+                will-change: transform;
+                @include transition();
+                transform: translateY(-100vh);
+                max-width: 50%;
+                animation: bounce-bottom var(--time5) var(--time3) var(--ease_out_primary) forwards;
+                @include breakpoint(xxl) {
+                    max-width: 40%;
+                }
+                @include breakpoint(md) {
+                    max-width: 30%;
+                }
+            }
+            p{
+                @include font-style('Poppins', 500, 750px, 0);
+                color: var(--color_transition);
+                @include breakpoint(xxl) {
+                    font-size: 526px;
+                }
+                @include breakpoint(lg) {
+                    font-size: 366px;
+                }
+                @include breakpoint(md) {
+                    font-size: 157px;
+                }
+                @include breakpoint(sm) {
+                    font-size: 107px;
+                }
+            }
+        }
+        .title{
+            text-align: center;
+            text-transform: initial;
+            margin-top: var(--spacing-12);
+        }
+    }
+}

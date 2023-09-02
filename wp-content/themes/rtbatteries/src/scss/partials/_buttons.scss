@@ -1,0 +1,277 @@
+.btn-primary{
+    &.dark{
+        --bg: var(--color_primary);
+        --color: var(--font-color_secondary);
+        --border-color: transparent;
+        &:hover{
+            --bg: var(--color_primary_ghost);
+        }
+        &:active{
+            --bg: var(--color_primary);
+        }
+    }
+
+    &.bright{
+        --bg: var(--color_bright_primary);
+        &:hover{
+            --bg: var(--color_bright_primary_ghost);
+        }
+        &:active{
+            --bg: var(--color_bright_primary_ghost);
+        }
+    }
+    &.bright-inversed{
+        @extend .bright;
+        --color: var(--font-color_secondary);
+    }
+
+    &.gradient{
+        --bg: var(--color_bright_primary_ghost);
+        background-size: 300% 100%;
+        background-image: linear-gradient(93.05deg, #01c840 9.27%, #8dff4c 57.75%, #aad42c 95.97%);
+        &:hover{
+            background-position: 50% 0;
+            background-image: linear-gradient(93.05deg, #01C88E 9.27%, #62E318 57.75%, #55D42C 95.97%);
+        }
+        &:active{
+            background-position: 100% 0;
+            background-image: linear-gradient(93.05deg, #01C88E 9.27%, #62E318 57.75%, #55D42C 95.97%);
+        }
+     
+    }
+    &.ghost{
+        --border-color: var(--color_primary_ghost);
+        &:hover{
+            --bg: var(--color_primary);
+        }
+        &:active{
+            --bg: var(--color_primary_ghost);
+        }
+        &:hover, &:active{
+            --color: var(--font-color_secondary);
+            --border-color: transparent;
+        }
+    }
+
+    &.lg{
+        --lsp-y: var(--spacing-2);
+        --lsp-x: calc(var(--spacing-12) * 2);
+        --radius: var(--radius_3);
+        --weight: 600;
+        --size: 20px;
+        --lineheight: 27px;
+        --l-spacing: normal;
+        @include breakpoint(xxl) {
+            --lsp-x: calc(var(--spacing-9) * 2);
+            --size: 18px;
+            --lineheight: 26px;
+            --l-spacing: 0.035em;
+        }
+        @include breakpoint(sm) {
+            --size: 16px;
+            --lineheight: 21px;
+        }
+    }
+    &.md{
+        --lsp-y: var(--spacing-2);
+        --lsp-x: calc(var(--spacing-6) + 2px);
+        --radius: var(--radius_3);
+        --weight: var(--weight_3);
+        --size: 16px;
+        --lineheight: 18.5px;
+        --l-spacing: 7.5%;
+        @include breakpoint(xxl) {
+            --size: 14px;
+            --lineheight: 26px;
+            --l-spacing: 0.035em;
+        }
+        @include breakpoint(sm) {
+            --size: 12px;
+            --lineheight: 21px;
+        }
+    }
+    &.sm{
+        --lsp-y: var(--spacing-3);
+        --lsp-x: calc(var(--spacing-4) + 2px);
+        --radius: var(--radius_2);
+        --weight: 400;
+        --size: var(--size_5);
+        --lineheight: 12px;
+        --l-spacing: 0.1px;
+
+        @include breakpoint(xxl) {
+            --lsp-x: calc(var(--spacing-7) + 2px);
+            --size: 16px;
+            --lineheight: 24px;
+            --l-spacing: 0.075em;
+        }
+        @include breakpoint(sm) {
+            --size: 10px;
+            --lineheight: 15px;
+        }
+    }
+
+    will-change: transform;
+    @include font-style('Poppins', var(--weight), var(--size), var(--lineheight), var(--l-spacing), uppercase, var(--color));
+    @include transition();
+    @include flex-center();
+    padding: var(--lsp-y) var(--lsp-x);
+    width: fit-content;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background: var(--bg);
+}
+
+.btn-secondary{
+    --bg: var(--color_bright_primary_ghost_2);
+    @include flex-center();
+    position: relative;
+    padding: 0 var(--spacing-2);
+    &:hover, &:active, &.static{
+        &:after{
+            width: 104%;
+        }
+    }
+    &:active{
+        --bg: var(--color_bright_primary);
+    }
+    &:after{
+        @include transition();
+        content: '';
+        width: var(--size);
+        height: var(--size);
+        position: absolute;
+        left: -2%;
+        z-index: 1;
+        background: var(--bg);
+        border-radius: 100px;
+    }
+    p, svg{
+        position: relative;
+        white-space: nowrap;
+        flex-shrink: 0;
+        z-index: 2;
+    }
+    svg{
+        margin-left: var(--spacing-2);
+        width: var(--size-i);
+        height: var(--size-i);
+    }
+    &.md{
+        --size: 60px;
+        --size-i: 15px;
+        @include breakpoint(xxl) {
+            --size: 50px;
+        }
+        @include breakpoint(xl) {
+            --size: 40px;
+        }
+        @include breakpoint(md) {
+            --size: 30px;
+        }
+        p{
+            @include font-style('Poppins', 500, 24px, 36px, 0.035em, uppercase);
+            @include breakpoint(xxl) {
+                font-size: 18px;
+                line-height: 27px;
+            }
+            @include breakpoint(md) {
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    }
+    &.sm{
+        --size: 30px;
+        --size-i: 10px;
+        p{
+            @include font-style('Poppins', 500, 14px, 21px, 0.035em, uppercase);
+        }
+    }
+    &.prev, &.next{
+        svg{
+            width: 36px;
+            height: 16px;
+        }
+    }
+    &.prev{
+        svg{
+            margin-left: 0;
+        }
+        &:hover{
+            opacity: var(--opacity_2);
+        }
+        &:after{
+            display: none;
+        }
+    }
+}
+
+.btn-round{
+    --size:50px;
+    @include breakpoint(xxl) {
+        --size:40px;
+    }
+    @include breakpoint(md) {
+        --size:30px;
+    }
+    svg{
+        --svg-size:calc(var(--size) / 2);
+        width: var(--svg-size);
+        height: var(--svg-size); 
+    }
+    &-primary{
+        --bg: var(--color_bright_primary);
+        &:hover{
+            --bg: var(--color_bright_primary_ghost);
+        }
+        &:active{
+            --bg: var(--color_bright_primary_ghost);
+        }
+    }
+    &-secondary{
+        --size:30px;
+        svg{
+            --svg-size:calc(var(--size) / 2);
+            width: var(--svg-size);
+            height: var(--svg-size); 
+        }
+    }
+    &-popup{
+        --size:50px;
+        box-shadow: 0px 0px 20px 0px var(--color_primary_ghost_2);
+        @include breakpoint(xxl) {
+            --size: 40px;
+        }
+        @include breakpoint(md) {
+            --size: 30px;
+        }
+        svg{
+            width: var(--size);
+            height: var(--size); 
+        }
+    }
+
+    &.light{
+        --size:30px;
+        svg{
+            --svg-size:var(--size);
+            width: var(--svg-size);
+            height: var(--svg-size); 
+        }
+    }
+
+    will-change: transform;
+    @include flex-center();
+    @include transition();
+    width: var(--size);
+    height: var(--size);
+    background: var(--bg);
+    border-radius: 100%;
+}
+
+.newslatter{
+    .btn-primary.dark:hover{
+        --bg: var(--color_primary);
+    }
+}

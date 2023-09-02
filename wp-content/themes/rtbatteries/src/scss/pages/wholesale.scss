@@ -1,0 +1,36 @@
+@import '../helpers/helpers';
+
+.wholesale-page{
+    .wholesale-wrapper{
+        @include flex-between();
+        align-items: flex-start;
+        padding-top: var(--spacing-12);
+        padding-bottom: var(--spacing-12);
+        @include breakpoint(md) {
+            flex-direction: column;
+            padding-bottom: var(--spacing-4);
+        }
+        >*{
+            width: 48%;
+            @include breakpoint(md) {
+                width: 100%;
+            }
+        }
+    }
+    .wholesale_info{
+        img{
+            margin-top: var(--spacing-4);
+        }
+        .title {
+            padding-bottom: var(--spacing-4)
+        }
+    }
+    .wholesale_form{
+        @include breakpoint(md) {
+            margin-bottom: var(--spacing-12);
+        }
+        .btn-primary{
+            margin-left: 0;
+        }
+    }
+}

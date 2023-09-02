@@ -1,0 +1,36 @@
+@import '_normalize';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-align: left;
+  &:not(.title, .subtitle, .text, .content){
+    user-select: none;
+  }
+}
+
+html, body{
+  height: 100%;
+  font-size: 100%;
+  font-family: Roboto, sans-serif;
+  line-height: 1.4;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+  outline: none;
+}
+
+section{
+  width: 100%;
+  display: block;
+}

@@ -1,0 +1,159 @@
+.editor{
+    clear: both;
+    .alignright {
+      float: right;
+      padding-left: 40px;
+      @include breakpoint(md) {
+       float: none;
+        padding-left: 0;
+      }
+    }
+    .alignleft {
+      float: left;
+      padding-right: 40px;
+      @include breakpoint(md) {
+        float: none;
+        padding-right: 0;
+      }
+    }
+    .aligncenter {
+      text-align: center;
+      max-width: 100%;
+      max-height: auto;
+      margin: 0 auto;
+    }
+    p {
+      padding: 10px 0;
+    }
+    b{
+      padding: 5px 0;
+      display: block;
+      font-weight: 900;
+    }
+    i{
+      font-style: italic;
+    }
+    ul{
+      padding-left: 35px;
+      li{
+        position: relative;
+        list-style-type: none;
+        margin: 5px 0;
+        &:after{
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: var(--font-color_primary);
+          top: 8px;
+          left: -20px;
+          border-radius: 100%;
+          @include breakpoint(md) {
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
+    ol{
+      padding-left: 35px;
+      li{
+        position: relative;
+        list-style-type: decimal;
+        margin: 5px 0;
+      }
+    }
+    .blockInsert{
+      margin: 20px 0;
+      clear: both;
+      background-size: 110%;
+      @include breakpoint(sm) {
+        background-size: cover;
+      }
+    }
+    .wp-block-columns{
+      @include breakpoint(md) {
+        flex-direction: column;
+      }
+      .wp-block-column{
+        &:nth-child(2n) {
+          @include breakpoint(md) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    img{
+      border-radius: 10px;
+      padding: 20px 30px;
+      max-width: 100%;
+      display: block;
+      height: auto;
+      @include breakpoint(md) {
+        float: none !important;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+    }
+    blockquote{
+      background: var(--font-color_primary);
+      box-shadow: 0px 7px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      padding: 35px;
+      margin: 15px 0;
+      @include breakpoint(md) {
+        padding: 15px;
+      }
+      h1, h2, h3, h4, h5, h6{
+        color:  var(--font-color_primary);
+        margin: 0;
+      }
+      p{
+        color: var(--font-color_primary);
+      }
+    }
+    h1{
+      font-size: 2.4em !important;
+      margin: 1.17em 0 .67em;
+      @include breakpoint(md) {
+        font-size: 2.1em !important;
+      }
+    }
+    h2{
+      font-size: 1.7em !important;
+      margin: 1.45em 0 1.95em;
+      line-height: 1.2em;
+      @include breakpoint(xxl) {
+        font-size: 1.6em !important;
+      }
+      @include breakpoint(md) {
+        font-size: 1.4em !important;
+      }
+    }
+    h3{
+      font-size: 1.5em !important;
+      margin: 1.33em 0  .83em;
+      @include breakpoint(md) {
+        font-size: 1.4em !important;
+      }
+    }
+    h4{
+      font-size: 1.17em !important;
+      margin: 1.33em 0  .83em;
+      @include breakpoint(md) {
+        font-size: 1.15em !important;
+      }
+    }
+    h5{
+      font-size: .83em !important;
+      margin: 2em 0 1.5em
+    }
+    h6{
+      font-size: .65em !important;
+      margin: 2.17em 0 1.67em
+    }
+    h1, h2, h3, h4, h5, h6{
+      font-weight: bold;
+      color: var(--font-color_primary);
+    }
+  }
