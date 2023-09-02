@@ -1,0 +1,299 @@
+footer{
+    width: 100%;
+    background: var(--color_secondary);
+    position: relative;
+    padding: var(--spacing-6) 0;
+    &:after{
+        content: '';
+        background: var(--color_secondary);
+        width: 100%;
+        height: var(--header-height);
+        display: block;
+        position: absolute;
+        top: calc(var(--header-height) * -1);
+        left: 0;
+        @include breakpoint(md) {
+            top: calc((var(--header-height) + 5px) * -1);
+            height:  calc((var(--header-height) + 5px));
+        }
+    }
+
+    >.container{
+        @include flex-between();
+        align-items: flex-start;
+        position: relative;
+        z-index: 2;
+        @include breakpoint(xl) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .newslatter_mobile{
+        display: none;
+        margin: var(--spacing-10) auto;
+        @include breakpoint(xl) {
+            display: block;
+        }
+        @include breakpoint(sm) {
+            margin: var(--spacing-5) auto;
+        }
+        .newslatter{
+            @include breakpoint(xl) {
+                display: block;
+            }
+        }
+        .label{
+            text-align: center;
+            @extend .title;
+            font-weight: bold;
+        }
+    }
+
+    .newslatter{
+        @include breakpoint(xl) {
+            display: none;
+        }
+    }
+
+    .column{
+        @include breakpoint(sm) {
+            padding: var(--spacing-2) 0;
+        }
+        &.contacts_first{
+            @include breakpoint(xl) {
+                width: 50%;
+            }
+            @include breakpoint(sm) {
+                width: 100%;
+                @include flex-column();
+                align-items: center;
+            }
+        }
+        &.contacts_menu{
+            @include breakpoint(xl) {
+                width: 25%;
+            }
+            @include breakpoint(sm) {
+                width: 100%;
+            }
+            .label{
+                position: relative;
+                width: fit-content;
+                @include breakpoint(sm) {
+                    padding: 0;
+                }
+                &:after {
+                    @include transition();
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 5px 5px 0 5px;
+                    border-color: var(--color_primary) transparent transparent transparent;
+                    transform: translateX(10px) rotate(0);
+                    top: 40%;
+                    right: calc(var(--spacing-2) * -1);
+                    position: absolute;
+                    display: none;
+                    @include breakpoint(sm) {
+                        display: block;
+                    }
+                }
+                &.opened{
+                    &:after {
+                        transform: translateX(10px) rotate(-180deg);
+                        transform-origin: 60% 50%;
+                    }
+                    + ul{
+                        max-height: 1000px;
+                    }
+                }
+            }
+            ul{
+                height: 100%;
+                @include transition();
+                @include breakpoint(sm) {
+                    max-height: 0;
+                    overflow: hidden;
+                    padding-top: var(--spacing-2);
+                }
+            }
+        }
+        &.contacts_column{
+            @include breakpoint(xl) {
+                margin-left: 50%;
+                padding-top: var(--spacing-4);
+            }
+            @include breakpoint(sm) {
+                width: 100%;
+                margin-left: 0;
+                padding-top: var(--spacing-1);
+            }
+        }
+        &:not(:last-child){
+            padding-right: var(--spacing-5);
+            @include breakpoint(sm) {
+                padding-right: 0;
+            }
+        }
+
+        .row{
+            @include flex-start();
+            padding: var(--spacing-6) 0;
+            @include breakpoint(sm) {
+                padding: var(--spacing-4) 0 var(--spacing-2);
+            }
+            p{
+                margin-left: var(--spacing-1);
+                font-family: Poppins;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0em;
+
+            }
+        }
+
+        .footer_logo{
+            width: 100%;
+            max-width: 400px;
+            @include breakpoint(xl) {
+                max-width: 300px;
+            }
+            @include breakpoint(sm) {
+                max-width: 250px;
+            }
+        }
+
+        .adress{
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0em;
+            max-width: 380px;
+            padding-bottom: var(--spacing-7);
+            @include breakpoint(xl) {
+                max-width: 250px;
+                padding-bottom: var(--spacing-4);
+                font-family: Poppins;
+                font-size: 16px;
+                line-height: 22px;
+            }
+            @include breakpoint(sm) {
+                text-align: center;
+            }
+        }
+
+        a{
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-transform: uppercase;
+
+            @include breakpoint(xxl) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            @include breakpoint(md) {
+                word-break: break-word;
+            }
+        }
+
+        form{
+            margin-bottom: var(--spacing-4);
+        }
+
+        ul{
+            @include flex-column();
+            align-items: flex-start;
+            &.contacts{
+                --svg-size: 30px;
+                a{
+                    text-transform:none;
+                }
+            }
+            &.icon-list{
+                --svg-size: 90px;
+                transform: translateX(calc(var(--svg-size) / -2.5));
+                @include breakpoint(xl) {
+                    --svg-size: 70px;
+                }
+                @include breakpoint(sm) {
+                    transform: none;
+                }
+            }
+            li{
+                @include flex-center();
+                &:not(:last-child){
+                    padding-bottom: var(--spacing-3);
+                    @include breakpoint(xl) {
+                        padding-bottom: var(--spacing-2);
+                    }
+                }
+                svg + a{
+                    margin-left: var(--spacing-2);
+                }
+                svg{
+                    flex-shrink: 0;
+                    width: var(--svg-size);
+                    height: var(--svg-size);
+                }
+            }
+        }
+    }
+}
+
+ul.contacts{
+    @include flex-column();
+    align-items: flex-start;
+    --svg-size: 30px;
+    a{
+        text-transform:none;
+    }
+    &.icon-list{
+        --svg-size: 90px;
+        transform: translateX(calc(var(--svg-size) / -2.5));
+        @include breakpoint(xl) {
+            --svg-size: 70px;
+        }
+        @include breakpoint(sm) {
+            transform: none;
+        }
+    }
+    li{
+        @include flex-center();
+        &:not(:last-child){
+            padding-bottom: var(--spacing-3);
+            @include breakpoint(xl) {
+                padding-bottom: var(--spacing-2);
+            }
+        }
+        a{
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            letter-spacing: 0em;
+
+            @include breakpoint(xxl) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            @include breakpoint(md) {
+                word-break: break-word;
+            }
+        }
+
+        svg + a{
+            margin-left: var(--spacing-2);
+        }
+        svg{
+            flex-shrink: 0;
+            width: var(--svg-size);
+            height: var(--svg-size);
+        }
+    }
+}

@@ -1,0 +1,283 @@
+/* Breakpoints
+-------------------------*/
+
+@mixin breakpoint($point) {
+  @if $point == xxl-extra {
+    @media only screen and (max-width: $break-xxl-extra) {
+      @content;
+    }
+  }  @else if $point == xxl {
+    @media only screen and (max-width: $break-xxl) {
+      @content;
+    }
+  } @else if $point == xxll {
+    @media only screen and (max-width: $break-xxll) {
+      @content;
+    }
+  }@else if $point == xl {
+    @media only screen and (max-width: $break-xl) {
+      @content;
+    }
+  }@else if $point == lg {
+    @media only screen and (max-width: $break-lg) {
+      @content;
+    }
+  } @else if $point == md {
+    @media only screen and (max-width: $break-md) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media only screen and (max-width: $break-sm) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media only screen and (max-width: $break-xs) {
+      @content;
+    }
+  }
+}
+
+/* Retina Images
+-------------------------*/
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/* Clearfix
+-------------------------*/
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* Box Sizing
+-------------------------*/
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+/* Border Radius
+-------------------------*/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+/* Single side border-radius
+-------------------------*/
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+/* Opacity
+-------------------------*/
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* Center Block
+-------------------------*/
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Text overflow
+-------------------------*/
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Font Size
+-------------------------*/
+
+@mixin font-size($size: 12, $base: 16) {
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+/* Line Height
+-------------------------*/
+
+@mixin line-height($height: 12, $base: 16){
+    line-height: $height + px;
+    line-height: ($height / $base) * 1rem;
+}
+
+/* Transitions
+-------------------------*/
+
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+    $vendor-prefixed-properties: transform background-clip background-size;
+    $result: ();
+    @each $prefix in $prefixes {
+       @if index($vendor-prefixed-properties, $property) {
+         $property: -#{$prefix}-#{$property}
+       }
+       $result: append($result, $property);
+    }
+    @return $result;
+}
+
+@function trans-prefix($transition, $prefix: moz) {
+    $prefixed: ();
+    @each $trans in $transition {
+        $prop-name: nth($trans, 1);
+        $vendor-prop-name: prefix($prop-name, $prefix);
+        $prop-vals: nth($trans, 2);
+        $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+    }
+    
+    @return $prefixed;
+}
+
+
+@mixin transition($property: all,$duration: var(--base_time),$delay:0s,$timing-function: ease-in-out){
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+  transition-delay: $delay;
+}
+
+/* Flex
+-------------------------*/
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+/* Font face
+-------------------------*/
+
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+    @font-face {
+      font-family: quote($font-name);
+      src: url($path+".eot");
+      src: url($path+".eot?#iefix") format("embedded-opentype"), url($path+".woff")
+          format("woff"), url($path+".ttf") format("truetype"), url($path+".svg##{$font-name}")
+          format("svg");
+      font-weight: $weight;
+      font-style: $style;
+    }
+}
+
+@mixin font-style(
+  $font-name, 
+  $weight: 400, 
+  $size: 18px, 
+  $line-height: 21px, 
+  $letter-spacing: normal, 
+  $text-transform: normal,
+  $color: black
+  ) {
+  font-family: $font-name;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+  color:$color;
+}
+
+/* Background images
+-------------------------*/
+@mixin cover-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

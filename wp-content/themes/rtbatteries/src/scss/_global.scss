@@ -1,0 +1,60 @@
+html, body{
+  color: var(--font-color_primary);
+  scrollbar-width: thin;
+  @include font-style('Roboto', 400, 24px, 28px, 0em);
+  @include breakpoint(xxl) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  @include breakpoint(lg) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  *{
+    scrollbar-width: thin;
+  }
+
+  a{
+    @include transition();
+    color: var(--font-color_primary);
+    &:hover{
+      opacity: var(--opacity_3);
+    }
+
+  }
+
+  header{
+    + *{
+      margin-top: var(--header-height);
+    }
+  }
+
+  section{
+    padding: var(--section-margin) 0;
+  }
+
+  .icon-list{
+    a{
+        line-height: 0;
+    }
+  }
+  *{
+    cursor: none !important;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgba(158, 158, 158, 0.2);
+    border-radius: 100px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: rgba(125, 125, 125, 0.5);
+    border-radius: 100px;
+  }
+  
+}

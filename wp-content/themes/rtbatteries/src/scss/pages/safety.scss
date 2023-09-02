@@ -1,0 +1,54 @@
+@import '../helpers/helpers';
+
+.files-upload{
+    padding: var(--spacing-12) 0;
+    @include flex-start();
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @include breakpoint(lg) {
+        padding: var(--spacing-6) 0;
+    }
+    .column{
+        &:not(:last-child){
+            margin-right: calc(var(--spacing-12) * 2);
+            @include breakpoint(xxl) {
+                margin-right: calc(var(--spacing-8) * 2);
+            }
+            @include breakpoint(md) {
+                margin-right: var(--spacing-10);
+            }
+        }
+    }
+    ul{
+        padding: 0;
+        li{
+            @include flex-center();
+            &:not(:last-child){
+                margin-bottom: var(--spacing-6);
+                @include breakpoint(xxl) {
+                    margin-bottom: var(--spacing-4);
+                }
+                @include breakpoint(md) {
+                    margin-bottom: var(--spacing-2);
+                }
+            }
+            &:after{
+                display: none;
+            }
+            svg{
+                margin-right: var(--spacing-2)
+            }
+            a{
+                @include font-style('Roboto', 600, 20px, 23px);
+                @include breakpoint(xxl) {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+                @include breakpoint(md) {
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+}

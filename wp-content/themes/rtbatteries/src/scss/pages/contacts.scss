@@ -1,0 +1,88 @@
+@import '../helpers/helpers';
+
+.contacts-page{
+    position: relative;
+    overflow: hidden;
+    &:after{
+        content: '';
+        background: var(--color_secondary_ghost_2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        backdrop-filter: blur(60px);
+    }
+    .moving-shape{
+        z-index: -1;
+    }
+    .contacts-wrapper{
+        @include flex-between();
+        align-items: flex-start;
+        padding-top: var(--spacing-12);
+        padding-bottom: var(--spacing-12);
+        @include breakpoint(md) {
+            flex-direction: column;
+            padding-bottom: var(--spacing-4);
+        }
+    }
+    .title{
+        margin-bottom: var(--spacing-6);
+        @include breakpoint(xxl) {
+            margin-bottom: var(--spacing-3);
+        }
+        @include breakpoint(md) {
+            margin-bottom: var(--spacing-1);
+        }
+    }
+    .subtitle{
+        @include breakpoint(xxl) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+        @include breakpoint(md) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+    .contacts_info{
+        width: 48%;
+        @include breakpoint(md) {
+            width: 100%;
+        }
+        .contacts_title{
+            @include font-style('Poppins', 600, 32px, 48px);
+            padding-bottom: var(--spacing-4);
+            text-transform: uppercase;
+            @include breakpoint(xxl) {
+                font-size: 24px;
+                line-height: 36px;
+            }
+            @include breakpoint(md) {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+        .subtitle{
+            font-weight: 300;
+            max-width: 450px;
+        }
+        .contacts{
+            padding: var(--spacing-8) 0;
+        }
+        ul.contacts li:not(:last-child) {
+            padding-bottom: var(--spacing-5);
+            @include breakpoint(md) {
+                padding-bottom: var(--spacing-2);
+            }
+        }
+    }
+
+    .contacts_form{
+        width: 48%;
+        @include breakpoint(md) {
+            width: 100%;
+        }
+    }
+}
