@@ -75,7 +75,7 @@ class RT_Batteries
 	}
 
 	public function define_constants() {
-		define( '_S_VERSION', '1.8933578334343343333343340094094435500' );
+		define( '_S_VERSION', '1.8650' );
 		define( '_S_DOMAIN',  $this->domain );
 		define( 'ASSETS_CSS', THEME_URL.'/assets/css/' );
 		define( 'ASSETS_JS',  THEME_URL.'/assets/js/' );
