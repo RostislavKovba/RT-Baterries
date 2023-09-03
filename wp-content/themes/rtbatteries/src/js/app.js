@@ -2,12 +2,12 @@
 import * as smoothScroll from './smoothScroll';
 import * as select from './niceSelect';
 import * as functions from './functions';
+import * as menu from './menu';
 import * as sectionDetector from './sectionDetector';
 import * as cursor from './cursor';
 import * as canvas from './canvas';
 import * as sliders from './sliders';
 import * as constructor from './constructor';
-import * as menu from './menu';
 import * as movingSvg from './movingSvg';
 
 

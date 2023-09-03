@@ -458,6 +458,19 @@ header{
                 font-size: 16px;
                 line-height: 24px;
              }
+            &::before{
+                content: '';
+                width: 200vw;
+                height: 300%;
+                background: var(--color_secondary_ghost_2);
+                backdrop-filter: blur(20px);
+                position: absolute;
+                left: -50vw;
+                top: -100%;
+                z-index: -1;
+                transform: translateX(-50vw);
+                z-index: -1;
+            }
             &:after{
                 content: '';
                 width: 0;
