@@ -84,6 +84,7 @@ img.onload = function() {
   drawCenteredImage(img);
   setTimeout(() => {
     if (!isScrolling && !animationPlayed) {
+      animate(0);
       const scrollTop = document.documentElement.scrollTop;
       const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
       const scrollFraction = scrollTop / maxScrollTop;
@@ -93,7 +94,7 @@ img.onload = function() {
       );
 
       const currentTime = Date.now();
-      if (currentTime - lastScrollTime >= 5000) {
+      if (currentTime - lastScrollTime >= 1000) {
         animate(frameIndex + 1);
         if(!$('header').hasClass('opened')){
           shouldScroll = true;
