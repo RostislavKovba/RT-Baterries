@@ -70,6 +70,7 @@
     "minibarjs": "^0.5.1",
     "nice-select2": "^2.1.0",
     "regenerator-runtime": "^0.13.11",
+    "smooth-scrollbar": "^8.8.4",
     "three": "^0.153.0",
     "three-gltf-loader": "^1.111.0",
     "three-orbitcontrols": "^2.110.3"
