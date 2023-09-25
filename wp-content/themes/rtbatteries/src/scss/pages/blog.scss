@@ -44,6 +44,18 @@
                 svg path{
                     stroke: var(--color_bright_primary);
                 }
+                &:hover{
+                    background: var(--color_bright_primary_ghost);
+                    svg path{
+                        stroke: var(--ico_color_secondary);
+                    }
+                }
+                &:focus{
+                    background: var(--color_bright_primary);
+                    svg path{
+                        stroke: var(--ico_color_secondary);
+                    } 
+                }
             }
         }
         &:hover{

@@ -1,0 +1,11 @@
+.woocommerce-shop{
+    .products {
+        width: 100%;
+        @extend .items-general-wrapper;
+        padding: var(--spacing-4);
+        grid-template-columns: 1fr 1fr 1fr;
+        .product {
+            @extend .item-general;
+        }
+    }
+}

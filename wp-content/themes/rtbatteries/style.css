@@ -9,3 +9,7 @@ Tested up to: 7.4
 Requires PHP: 7.4
 Text Domain: rtbatteries
 */
+
+*{
+    outline: none !important;
+}

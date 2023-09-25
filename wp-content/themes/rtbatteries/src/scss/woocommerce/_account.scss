@@ -1,0 +1,12 @@
+.woocommerce-account{
+    .woocommerce{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        .woocommerce-MyAccount-content{
+            width: 100%;
+            padding-left: var(--spacing-12);
+        }
+    }
+}

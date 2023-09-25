@@ -101,7 +101,6 @@ const html = document.documentElement;
         });
     }
     if($(".blog-inner-page").length > 0){
-        console.log( document.querySelector('.overlay'), 'pppp')
         $('.overlay').toggleClass('opened');
     }
     $('.about-wrapper .item-general').on('click', function(){

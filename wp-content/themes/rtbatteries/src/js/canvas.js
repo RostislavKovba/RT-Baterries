@@ -30,13 +30,11 @@ function drawCenteredImage(image) {
   let newWidth, newHeight, x, y;
 
   if (canvasAspectRatio > imageAspectRatio) {
-    // Ширина канваса більша, масштабуємо по ширині
     newWidth = canvas.width;
     newHeight = canvas.width / imageAspectRatio;
     x = 0;
     y = (canvas.height - newHeight) / 2;
   } else {
-    // Висота канваса більша або рівна, масштабуємо по висоті
     newWidth = canvas.height * imageAspectRatio;
     newHeight = canvas.height;
     x = (canvas.width - newWidth) / 2;
@@ -59,19 +57,14 @@ function animate(currentFrameIndex) {
   drawCenteredImage(image);
   currentFrameIndex = (currentFrameIndex + 1) % frameCount;
 
-  // Анімація з 30 кадрами в секунду (1000 мс / 30 кадрів)
   requestAnimationFrame(() => {
     if (!isScrolling && !animationPlayed) {
       if (currentFrameIndex < 149 && !shouldScroll) {
-        // Продовжуємо анімацію, якщо не досягнуто останнього кадру
         animate(currentFrameIndex);
       } else {
-        // Якщо досягнуто останнього кадру, встановлюємо флаг, що анімація програлась
         animationPlayed = true;
-        // Зупиняємо анімацію, якщо вона програлась один раз
         isScrolling = false;
 
-        // Якщо маємо доскролити до наступної секції
         if (shouldScroll) {
           const nextSection = document.querySelector('.constructor');
           if (nextSection) {
@@ -89,10 +82,9 @@ const img = new Image();
 img.src = currentFrame(1);
 img.onload = function() {
   drawCenteredImage(img);
-  // Запускаємо анімацію через 1 хвилину без скролінгу
   setTimeout(() => {
     if (!isScrolling && !animationPlayed) {
-      // Отримуємо поточну позицію скролу
+      animate(0);
       const scrollTop = document.documentElement.scrollTop;
       const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
       const scrollFraction = scrollTop / maxScrollTop;
@@ -101,18 +93,16 @@ img.onload = function() {
         Math.ceil(scrollFraction * frameCount)
       );
 
-      // Перевіряємо, чи пройшло вже 1 хвилину від останнього скролу
       const currentTime = Date.now();
-      if (currentTime - lastScrollTime >= 5000) {
+      if (currentTime - lastScrollTime >= 1000) {
         animate(frameIndex + 1);
         if(!$('header').hasClass('opened')){
           shouldScroll = true;
-        } // Встановлюємо прапор, що маємо доскролити після анімації
+        }
       }
     }
   }, 5000);
 
-  // Запускаємо анімацію при скролінгу
   window.addEventListener('scroll', () => {
     animationPlayed = true;
     isScrolling = true;
@@ -124,24 +114,21 @@ img.onload = function() {
       Math.ceil(scrollFraction * frameCount)
     );
     updateImage(frameIndex + 1);
-    lastScrollTime = Date.now(); // Оновлюємо час останнього скролу
+    lastScrollTime = Date.now();
 
-    clearTimeout(scrollTimeout); // Очистимо попередній таймер, якщо він є
-    shouldScroll = true; // Встановлюємо прапор, що маємо доскролити після анімації
+    clearTimeout(scrollTimeout);
+    shouldScroll = true;
 
-    // Встановлюємо новий таймер для запуску анімації через 1 секунду
     scrollTimeout = setTimeout(() => {
       const currentTime = Date.now();
-      // Перевіряємо, чи відбувався скрол і не викликалась анімація
       if (currentTime - lastScrollTime >= 1000 && !animationPlayed) {
-        // Перевіряємо, чи маємо доскролити до наступної секції після закінчення анімації
         if (shouldScroll) {
           const nextSection = document.querySelector('.constructor');
           if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
           }
         }
-        shouldScroll = false; // Збираємо прапор після доскролу
+        shouldScroll = false;
         animate(frameIndex + 1);
       }
     }, 1000);
