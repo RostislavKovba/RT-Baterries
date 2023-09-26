@@ -2,14 +2,13 @@
 
 class RT_WooCommerce {
 	public function __construct() {
-		if ( ! class_exists( 'WooCommerce' ) ) return;
-
         add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
 		$this->general_customize();
-//		$this->pruduct_customize();
+        $this->category_customize();
+        $this->pruduct_customize();
 //		$this->cart_customize();
 	}
 
@@ -25,14 +24,18 @@ class RT_WooCommerce {
 //		remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 //		add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 10 );
 	}
+    public function category_customize() {
+        require get_template_directory() . '/inc/RT_WooCategory.php';
+        new RT_WooCategory();
+    }
 
 	public function pruduct_customize() {
-		require get_template_directory() . '/src/inc/class-wc-product-customize.php';
-		new Product_Customize();
+		require get_template_directory() . '/inc/RT_WooProduct.php';
+		new RT_WooProduct();
 	}
 
 	public function cart_customize() {
-		require get_template_directory() . '/src/inc/class-wc-cart-customize.php';
+		require get_template_directory() . '/inc/class-wc-cart-customize.php';
 		new Cart_Customize();
 	}
 }
