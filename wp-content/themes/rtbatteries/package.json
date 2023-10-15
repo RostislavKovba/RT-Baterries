@@ -64,6 +64,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.22.5",
     "axios": "^0.21.1",
+    "dart-sass": "^1.25.0",
     "fs-extra": "^9.0.1",
     "gulp-rigger": "^0.5.8",
     "gulp-template": "^5.0.0",
