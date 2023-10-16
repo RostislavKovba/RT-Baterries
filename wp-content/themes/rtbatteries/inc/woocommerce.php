@@ -39,16 +39,6 @@ add_action( 'after_setup_theme', 'rtbatteries_woocommerce_setup' );
 
 
 /**
- * Disable the default WooCommerce stylesheet.
- *
- * Removing the default WooCommerce stylesheet and enqueing your own will
- * protect you during WooCommerce core updates.
- *
- * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
- */
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-/**
  * Add 'woocommerce-active' class to the body tag.
  *
  * @param  array $classes CSS classes applied to the body tag.

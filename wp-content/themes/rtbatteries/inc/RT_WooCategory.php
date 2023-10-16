@@ -9,8 +9,7 @@ class RT_WooCategory
 //        remove_action('woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 //        remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10);
 //
-        add_action('woocommerce_before_shop_loop', function() {echo '<div class="container">';}, 5);
-        add_action('woocommerce_after_shop_loop', function() {echo '</div><!-- .container -->';}, 15);
+
 //        add_action('woocommerce_before_shop_loop', [$this, 'custom_catalog_filtering'], 15);
 //        add_action('woocommerce_after_main_content', [$this, 'custom_load_more'], 5);
 //

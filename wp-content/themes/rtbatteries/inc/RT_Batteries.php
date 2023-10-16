@@ -1,12 +1,10 @@
 <?php
 /**
- * RomeTech-Batteries theme
+ * RomeTech Batteries theme class
  */
 
 class RT_Batteries
 {
-	private string $domain = 'rtbatteries';
-
 	public function __construct() {
 		$this->define_constants();
 		$this->options_page_init();
@@ -75,7 +73,7 @@ class RT_Batteries
 	}
 
 	public function define_constants() {
-		define( '_S_DOMAIN',  $this->domain );
+		define( '_S_DOMAIN',  'rtbatteries' );
 		define( 'ASSETS_CSS', THEME_URL.'/assets/css/' );
 		define( 'ASSETS_JS',  THEME_URL.'/assets/js/' );
 		define( 'ASSETS_IMG', THEME_URL.'/images/' );

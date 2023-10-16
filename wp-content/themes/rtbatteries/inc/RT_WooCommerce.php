@@ -15,9 +15,13 @@ class RT_WooCommerce {
 //		add_filter('woocommerce_enqueue_styles', '__return_empty_array' );
 //		add_filter('wc_add_to_cart_message_html', [$this, 'custom_add_to_cart_message'], 10, 3 );
 
-		// Quantity buttons
-		add_action('woocommerce_before_quantity_input_field', [$this, 'custom_quantity_button_minus']);
-		add_action('woocommerce_after_quantity_input_field', [$this, 'custom_quantity_button_plus']);
+        // Wrappers
+        add_action('woocommerce_before_main_content', function() {echo '<div class="container">';}, 5);
+        add_action('woocommerce_after_main_content', function() {echo '</div><!-- .container -->';}, 15);
+
+        // Quantity buttons
+        add_action('woocommerce_before_quantity_input_field', [$this, 'custom_quantity_button_minus']);
+        add_action('woocommerce_after_quantity_input_field', [$this, 'custom_quantity_button_plus']);
 
 		// Checkout
 //		remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
