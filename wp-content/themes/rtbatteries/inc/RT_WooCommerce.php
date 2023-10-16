@@ -9,16 +9,15 @@ class RT_WooCommerce {
 		$this->general_customize();
         $this->category_customize();
         $this->pruduct_customize();
-//		$this->cart_customize();
 	}
 
 	public function general_customize() {
-		add_filter('woocommerce_enqueue_styles', '__return_empty_array' );
+//		add_filter('woocommerce_enqueue_styles', '__return_empty_array' );
 //		add_filter('wc_add_to_cart_message_html', [$this, 'custom_add_to_cart_message'], 10, 3 );
 
 		// Quantity buttons
-//		add_action('woocommerce_before_quantity_input_field', [$this, 'custom_quantity_button_minus']);
-//		add_action('woocommerce_after_quantity_input_field', [$this, 'custom_quantity_button_plus']);
+		add_action('woocommerce_before_quantity_input_field', [$this, 'custom_quantity_button_minus']);
+		add_action('woocommerce_after_quantity_input_field', [$this, 'custom_quantity_button_plus']);
 
 		// Checkout
 //		remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
@@ -34,8 +33,14 @@ class RT_WooCommerce {
 		new RT_WooProduct();
 	}
 
-	public function cart_customize() {
-		require get_template_directory() . '/inc/class-wc-cart-customize.php';
-		new Cart_Customize();
-	}
+    /**
+     * Quantity buttons
+     */
+    public function custom_quantity_button_minus() {
+        echo '<input type="button" data-action="minus" class="quantity-toggle-button" value="-">';
+    }
+
+    public function custom_quantity_button_plus() {
+        echo '<input type="button" data-action="plus" class="quantity-toggle-button" value="+">';
+    }
 }
