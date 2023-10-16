@@ -15,6 +15,8 @@ class RT_WooCommerce {
 //		add_filter('woocommerce_enqueue_styles', '__return_empty_array' );
 //		add_filter('wc_add_to_cart_message_html', [$this, 'custom_add_to_cart_message'], 10, 3 );
 
+        remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+
         // Wrappers
         add_action('woocommerce_before_main_content', function() {echo '<div class="container">';}, 5);
         add_action('woocommerce_after_main_content', function() {echo '</div><!-- .container -->';}, 15);
