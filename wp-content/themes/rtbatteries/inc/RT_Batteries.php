@@ -73,7 +73,7 @@ class RT_Batteries
 	}
 
 	public function define_constants() {
-		define( '_S_VERSION', '12.80344' );
+		define( '_S_VERSION', '12.8sdssdvwwededwedfe' );
 		// define( '_S_DOMAIN',  $this->domain );
 		define( '_S_DOMAIN',  'rtbatteries' );
 		define( 'ASSETS_CSS', THEME_URL.'/assets/css/' );
