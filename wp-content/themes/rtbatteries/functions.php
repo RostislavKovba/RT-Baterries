@@ -18,11 +18,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require THEME_DIR . '/inc/jetpack.php';
 }
 
-// Load WooCommerce compatibility file.
-if ( class_exists( 'WooCommerce' ) ) {
-	require THEME_DIR . '/inc/woocommerce.php';
-}
-
 // Init theme
 new RT_Batteries();
 

@@ -1,16 +1,14 @@
 <?php
 /**
- * RomeTech-Batteries theme
+ * RomeTech Batteries theme class
  */
 
 class RT_Batteries
 {
-	private string $version = '1.0.0';
-	private string $domain = 'rtbatteries';
-
 	public function __construct() {
 		$this->define_constants();
 		$this->options_page_init();
+		$this->woocommerce_init();
 
 		add_action( 'after_setup_theme', [$this, 'setup'] );
 //		add_action( 'widgets_init', [$this, 'widgets_init'] );
@@ -76,7 +74,8 @@ class RT_Batteries
 
 	public function define_constants() {
 		define( '_S_VERSION', '12.80344' );
-		define( '_S_DOMAIN',  $this->domain );
+		// define( '_S_DOMAIN',  $this->domain );
+		define( '_S_DOMAIN',  'rtbatteries' );
 		define( 'ASSETS_CSS', THEME_URL.'/assets/css/' );
 		define( 'ASSETS_JS',  THEME_URL.'/assets/js/' );
 		define( 'ASSETS_IMG', THEME_URL.'/images/' );
@@ -97,11 +96,11 @@ class RT_Batteries
 	}
 
 	public function scripts_init() {
-		wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), _S_VERSION );
-		wp_enqueue_style( 'rtb-style', ASSETS_CSS . 'app.css', array(), _S_VERSION );
+		wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), null );
+		wp_enqueue_style( 'rtb-style', ASSETS_CSS . 'app.css', array(), null );
 
-		wp_enqueue_script('jquery-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), _S_VERSION, true);
-		wp_enqueue_script( 'rtb-script', ASSETS_JS . 'all.js', array('jquery-script'), _S_VERSION, true );
+		wp_enqueue_script('jquery-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true);
+		wp_enqueue_script( 'rtb-script', ASSETS_JS . 'all.js', array('jquery-script'), null, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -131,4 +130,13 @@ class RT_Batteries
 			'redirect'   => false,
 		]);
 	}
+
+    public function woocommerce_init() {
+        if ( !class_exists( 'WooCommerce' ) ) return;
+
+        require THEME_DIR . '/inc/RT_WooCommerce.php';
+        require THEME_DIR . '/inc/woocommerce.php';
+
+        new RT_WooCommerce();
+    }
 }
