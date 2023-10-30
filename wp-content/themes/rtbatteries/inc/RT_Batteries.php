@@ -11,7 +11,7 @@ class RT_Batteries
 		$this->woocommerce_init();
 
 		add_action( 'after_setup_theme', [$this, 'setup'] );
-//		add_action( 'widgets_init', [$this, 'widgets_init'] );
+		add_action( 'widgets_init', [$this, 'widgets_init'] );
 		add_action( 'wp_enqueue_scripts', [$this, 'scripts_init'] );
 	}
 
@@ -99,6 +99,7 @@ class RT_Batteries
 
 		wp_enqueue_script('jquery-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true);
 		wp_enqueue_script( 'rtb-script', ASSETS_JS . 'all.js', array('jquery-script'), null, true );
+        wp_enqueue_script( 'woocommerce-script', THEME_URL . '/js/woocommerce.js', array('jquery-script'), null, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

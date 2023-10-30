@@ -43,10 +43,10 @@ class RT_WooCommerce {
      * Quantity buttons
      */
     public function custom_quantity_button_minus() {
-        echo '<input type="button" data-action="minus" class="quantity-toggle-button" value="-">';
+        echo '<input type="button" class="quantity-toggle-button minus" value="-">';
     }
 
     public function custom_quantity_button_plus() {
-        echo '<input type="button" data-action="plus" class="quantity-toggle-button" value="+">';
+        echo '<input type="button" class="quantity-toggle-button plus" value="+">';
     }
 }
