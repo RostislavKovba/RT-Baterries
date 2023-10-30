@@ -12,7 +12,6 @@ import * as movingSvg from './movingSvg';
 
 
 window.addEventListener('load', () => {
-
   // const loadScript = (source, beforeEl, async = true, defer = true) => {
   //   return new Promise((resolve, reject) => {
   //     let script = document.createElement('script');
