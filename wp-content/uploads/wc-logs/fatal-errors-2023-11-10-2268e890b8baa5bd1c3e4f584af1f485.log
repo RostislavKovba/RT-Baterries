@@ -1,0 +1,23 @@
+2023-11-10T15:17:29+00:00 CRITICAL Uncaught Error: Call to a member function has_weight() on string in W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-template-functions.php:3516
+Stack trace:
+#0 W:\domains\rtb\wp-includes\class-wp-hook.php(324): wc_display_product_attributes()
+#1 W:\domains\rtb\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters()
+#2 W:\domains\rtb\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\content-single-product.php(60): do_action()
+#4 W:\domains\rtb\wp-includes\template.php(792): require('W:\\domains\\rtb\\...')
+#5 W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#6 W:\domains\rtb\wp-content\plugins\woocommerce\templates\single-product.php(37): wc_get_template_part()
+#7 W:\domains\rtb\wp-includes\template-loader.php(106): include('W:\\domains\\rtb\\...')
+#8 W:\domains\rtb\wp-blog-header.php(19): require_once('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\. in W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 3516
+
+2023-11-10T15:56:46+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in W:\domains\rtb\wp-content\themes\rtbatteries\index.php on line 66
+
+2023-11-10T15:56:49+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in W:\domains\rtb\wp-content\themes\rtbatteries\index.php on line 66
+
+2023-11-10T15:56:58+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in W:\domains\rtb\wp-content\themes\rtbatteries\index.php on line 66
+
+2023-11-10T15:57:00+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in W:\domains\rtb\wp-content\themes\rtbatteries\index.php on line 66
+
+2023-11-10T15:58:25+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in W:\domains\rtb\wp-content\themes\rtbatteries\index.php on line 66
+
