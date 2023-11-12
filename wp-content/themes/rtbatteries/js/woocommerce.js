@@ -39,7 +39,6 @@
 
 		// Trigger change event
 		$qty.trigger( 'change' );
-
 	});
 }( jQuery ) );
 

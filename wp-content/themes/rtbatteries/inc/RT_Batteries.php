@@ -73,8 +73,6 @@ class RT_Batteries
 	}
 
 	public function define_constants() {
-		define( '_S_VERSION', '12.8sdssdvwwededwedfe' );
-		// define( '_S_DOMAIN',  $this->domain );
 		define( '_S_DOMAIN',  'rtbatteries' );
 		define( 'ASSETS_CSS', THEME_URL.'/assets/css/' );
 		define( 'ASSETS_JS',  THEME_URL.'/assets/js/' );
@@ -136,7 +134,7 @@ class RT_Batteries
         if ( !class_exists( 'WooCommerce' ) ) return;
 
         require THEME_DIR . '/inc/RT_WooCommerce.php';
-        require THEME_DIR . '/inc/woocommerce.php';
+//        require THEME_DIR . '/inc/woocommerce.php';
 
         new RT_WooCommerce();
     }
