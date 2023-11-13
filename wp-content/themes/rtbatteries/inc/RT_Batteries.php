@@ -95,7 +95,7 @@ class RT_Batteries
 
 	public function scripts_init() {
 		wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), null );
-		wp_enqueue_style( 'rtb-style', ASSETS_CSS . 'app.css', array(), null );
+		wp_enqueue_style( 'rtb-style', ASSETS_CSS . 'app.css?v.45434ewe3453322', array(), null );
 
 		wp_enqueue_script('jquery-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true);
 		wp_enqueue_script( 'rtb-script', ASSETS_JS . 'all.js', array('jquery-script'), null, true );
