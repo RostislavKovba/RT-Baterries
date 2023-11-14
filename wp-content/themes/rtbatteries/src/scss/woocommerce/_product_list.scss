@@ -89,11 +89,48 @@ html body{
                         padding: 10px;
                     }
                 }
+                .quantity {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: fit-content;
+                    input{
+                        text-align: center;
+                        &.quantity-toggle-button{
+                            font-size: 24px;
+                            background: rgba(217, 217, 217, 0.58);
+                            border-radius: 50%;
+                            width: 40px;
+                            height: 40px;
+                            outline: none;
+                            border: none;
+                            &:hover{
+                                background: rgba(0, 224, 79, 0.25);
+                            }
+                        }
+                        &.input-text{
+                           margin: 0;
+                           width: 45px;
+                           border: none;
+                        }
+                    }
+                    input[data-action="minus"]{
+                        font-size: 40px;
+                    }
+                    input[type="number"] {
+                        -webkit-appearance: none;
+                        -moz-appearance: textfield;
+                        appearance: textfield;
+                    }
+                }
             }
             &::before {
                 display: none;
             }
         }
-        
+        .go-to-builder{
+            width: fit-content;
+            margin: 20px auto;
+        }
     }
 }

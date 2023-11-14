@@ -939,6 +939,26 @@
             }
         }
     }
+    &-extended{
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            @include breakpoint(xxl) {
+                margin-top: 20px;
+            }
+            @include breakpoint(lg) {
+                margin-top: 0;
+                top: -20px;
+            }
+            @include breakpoint(sm) {
+                top: 0;
+            }
+        }
+    }
 }
 
 .moving-shape{
