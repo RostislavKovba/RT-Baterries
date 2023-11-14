@@ -14,6 +14,8 @@ class RT_WooCommerce {
 	public function general_customize() {
 //		add_filter('woocommerce_enqueue_styles', '__return_empty_array' );
 //		add_filter('wc_add_to_cart_message_html', [$this, 'custom_add_to_cart_message'], 10, 3 );
+        add_filter( 'body_class', [$this, 'woocommerce_active_body_class'] );
+        add_action( 'after_setup_theme', [$this, 'woocommerce_setup'] );
 
         remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
@@ -40,6 +42,32 @@ class RT_WooCommerce {
 		require get_template_directory() . '/inc/RT_WooProduct.php';
 		new RT_WooProduct();
 	}
+
+    public function woocommerce_setup() {
+        add_theme_support(
+            'woocommerce',
+            array(
+                'thumbnail_image_width' => 150,
+                'single_image_width'    => 300,
+                'product_grid'          => array(
+                    'default_rows'    => 3,
+                    'min_rows'        => 1,
+                    'default_columns' => 4,
+                    'min_columns'     => 1,
+                    'max_columns'     => 6,
+                ),
+            )
+        );
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
+    }
+
+    public function woocommerce_active_body_class( $classes ) {
+        $classes[] = 'woocommerce-active';
+
+        return $classes;
+    }
 
     /**
      * Quantity buttons

@@ -6,7 +6,6 @@
  *
  * @package rtbatteries
  */
-
 ?>
 
 <h1 class="title title_3 center"><?php the_title(); ?></h1>
