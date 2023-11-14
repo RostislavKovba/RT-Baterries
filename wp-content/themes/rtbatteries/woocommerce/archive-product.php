@@ -94,6 +94,38 @@ if ( woocommerce_product_loop() ) {
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
+?>
+
+<section class="video-section video-section-extended extra scroll-y">
+    <div class="container">
+        <p class="title title_2">Build your own battery</p>
+    </div>
+
+    <div class="video-line">
+        <div class="wrap">
+            <div class="btn-round btn-round-secondary light">
+                <svg viewBox="0 0 38 38" fill="none">
+                    <circle cx="19" cy="19" r="19" fill="#00E04F"/>
+                    <path d="M27.8668 19.0005H19.0001M19.0001 19.0005H10.1334M19.0001 19.0005V27.8671M19.0001 19.0005V10.1338" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="btn-round btn-round-secondary light">
+                <svg viewBox="0 0 39 40" fill="none">
+                    <circle cx="19.3514" cy="19.8123" r="19.3514" fill="white"/>
+                    <path d="M10.3203 19.8125H28.3816" stroke="#00E04F" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="btn-secondary go-to-builder md next">
+    <p>Go to builder</p>
+    <svg viewBox="0 0 36 16" fill="none">
+        <path d="M28.7346 1L35 8M35 8L28.7346 15M35 8H0.999998" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+</div>
+
+<?php
 
 /**
  * Hook: woocommerce_sidebar.
