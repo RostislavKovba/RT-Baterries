@@ -1,0 +1,41 @@
+2023-12-06T16:17:13+00:00 CRITICAL Uncaught Error: Class 'RT_WooProduct' not found in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCategory.php:6
+Stack trace:
+#0 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php(38): RT_WooCategory->__construct()
+#1 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php(10): RT_WooCommerce->category_customize()
+#2 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_Batteries.php(139): RT_WooCommerce->__construct()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_Batteries.php(11): RT_Batteries->woocommerce_init()
+#4 W:\domains\rtb\wp-content\themes\rtbatteries\functions.php(22): RT_Batteries->__construct()
+#5 W:\domains\rtb\wp-settings.php(611): include('W:\\domains\\rtb\\...')
+#6 W:\domains\rtb\wp-config.php(97): require_once('W:\\domains\\rtb\\...')
+#7 W:\domains\rtb\wp-load.php(50): require_once('W:\\domains\\rtb\\...')
+#8 W:\domains\rtb\wp-blog-header.php(13): require_once('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\... in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCategory.php on line 6
+
+2023-12-06T16:17:20+00:00 CRITICAL Uncaught Error: Class 'RT_WooProduct' not found in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCategory.php:6
+Stack trace:
+#0 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php(38): RT_WooCategory->__construct()
+#1 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php(10): RT_WooCommerce->category_customize()
+#2 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_Batteries.php(139): RT_WooCommerce->__construct()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_Batteries.php(11): RT_Batteries->woocommerce_init()
+#4 W:\domains\rtb\wp-content\themes\rtbatteries\functions.php(22): RT_Batteries->__construct()
+#5 W:\domains\rtb\wp-settings.php(611): include('W:\\domains\\rtb\\...')
+#6 W:\domains\rtb\wp-config.php(97): require_once('W:\\domains\\rtb\\...')
+#7 W:\domains\rtb\wp-load.php(50): require_once('W:\\domains\\rtb\\...')
+#8 W:\domains\rtb\wp-blog-header.php(13): require_once('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\... in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCategory.php on line 6
+
+2023-12-06T16:17:41+00:00 CRITICAL Cannot declare class RT_WooProduct, because the name is already in use in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooProduct.php on line 3
+
+2023-12-06T16:18:03+00:00 CRITICAL Uncaught Error: Call to undefined function RT_WooProduct() in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCategory.php:23
+Stack trace:
+#0 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php(38): RT_WooCategory->__construct()
+#1 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php(10): RT_WooCommerce->category_customize()
+#2 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_Batteries.php(139): RT_WooCommerce->__construct()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_Batteries.php(11): RT_Batteries->woocommerce_init()
+#4 W:\domains\rtb\wp-content\themes\rtbatteries\functions.php(22): RT_Batteries->__construct()
+#5 W:\domains\rtb\wp-settings.php(611): include('W:\\domains\\rtb\\...')
+#6 W:\domains\rtb\wp-config.php(97): require_once('W:\\domains\\rtb\\...')
+#7 W:\domains\rtb\wp-load.php(50): require_once('W:\\domains\\rtb\\...')
+#8 W:\domains\rtb\wp-blog-header.php(13): require_once('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\index.php(17): require('W:\\domai in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCategory.php on line 23
+

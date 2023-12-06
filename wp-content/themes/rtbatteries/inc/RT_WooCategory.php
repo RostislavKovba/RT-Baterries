@@ -3,7 +3,7 @@
 class RT_WooCategory
 {
     public function __construct() {
-//        remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+        remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 //        remove_action('woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 //        remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10);
 //
@@ -20,9 +20,7 @@ class RT_WooCategory
 //        add_action('woocommerce_before_shop_loop_item_title', [$this, 'product_second_image'], 11);
 //        add_action('woocommerce_before_shop_loop_item_title', function() {echo '</div>';}, 12);
 //
-//        add_action('woocommerce_shop_loop_item_title', function() {echo '<div class="pruduct-info">';}, 5);
-//        add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 12 );
-//        add_action('woocommerce_after_shop_loop_item_title', function() {echo '</div>';}, 15);
+//        add_action('woocommerce_shop_loop_item_title', ['custom_specifications'], 15);
 //
 //        add_action( 'woocommerce_product_query', [$this, 'custom_sale_category'] );
 ////        add_action( 'woocommerce_product_query', [$this, 'custom_archive_category'] );
@@ -37,6 +35,8 @@ class RT_WooCategory
 //        add_filter('woocommerce_subcategory_count_html', '__return_false');
 //
 //        add_filter('get_terms', [$this, 'hide_categories_links'], 10, 2);
+
+
     }
 
 
