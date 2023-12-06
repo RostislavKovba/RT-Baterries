@@ -8,11 +8,11 @@ get_header();
 <div class="wholesale-page">
     <section>
         <div class="container">
-            <p class="title title_3">Wholesale</p>
+            <p class="title title_3"><?= the_title(); ?></p>
         </div>
         <div class="container wholesale-wrapper">
             <div class="wholesale_form">
-                <form class="regular">
+                <!--<form class="regular">
                     <fieldset>
                         <p class="row row-full">
                             <label>Your Name *</label>
@@ -86,22 +86,25 @@ get_header();
                         <textarea placeholder="Write your message..."></textarea>
                     </p>
                     <button type="submit" class="btn-primary lg dark">Send</button>
-                </form>
+                </form>-->
+                <?= do_shortcode('[contact-form-7 id="c885921" title="Wholesale"]'); ?>
             </div>
             <div class="wholesale_info">
-                <p class="title title_2">Business Opportunity</p>
+                <p class="title title_2"><?= pll__('Business Opportunity'); ?></p>
                 <div class="editor">
-                    <p>We are always looking for great relationships with great resellers and dealers. If you are interested in becoming a reseller, please fill out the form below.</p>
-
-                    <p>Bulk discounts are available for business buyers. Please contact us or call our sales department for bulk pricing for orders of 10+ items.
-                        Phone (United States): (215) 827-4529. Same day shipping is available from Cherry Hill, NJ distribution center.</p>
-
-                    <p>Rome Tech prides itself on providing excellent service, consistent growth and building strong, mutually beneficial customer relationships.</p>
+                    <?php the_content(); ?>
                 </div>
-                <img src="assets/images/stressed-businesswoman-checking-profit-resultes-standing-business-office 1.jpg" alt="#" title>
+                <img src="<?= get_the_post_thumbnail_url(); ?>" alt="#" title>
             </div>
         </div>
     </section>
+    <script>
+       jQuery(document).ready(function($) {
+            $('.wholesale_form').find('br').remove();
+            $('.wholesale_form').find('.wpcf7-form-control-wrap > *, .wpcf7-submit').unwrap();
+            $('.wholesale_form').find('textarea').css('height', '180px');
+        });
+    </script>
 
 </div>
 

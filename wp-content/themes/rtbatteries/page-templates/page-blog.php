@@ -1,6 +1,7 @@
 <?php
 /**
  * Template name: Blog
+ * Template post type: page
  */
 get_header();
 ?>
@@ -8,28 +9,40 @@ get_header();
     <section class="scroll-y">
         <p class="title title_3 center"><?php the_title(); ?></p>
         <div class="container">
-            <div class="blog-wrapper items-general-wrapper">
+            
 
-                <?php
-                if ( have_posts() ) :
-                    while ( have_posts() ) {
-                        the_post();
+        <?php
+            echo '<div class="blog-wrapper items-general-wrapper">';
 
-                        get_template_part( 'template-parts/content', get_post_type() );
-                    }
+            if ( have_posts() ) {
+                while ( have_posts() ) {
+                    the_post();
+                    get_template_part( 'template-parts/content', get_post_type() );
+                }
 
-                    the_posts_navigation();
+                // Виводимо пагінацію
+                echo '<ul class="pagination">';
+                for ($i = 1; $i <= $total_pages; $i++) {
+                    echo '<li>';
+                    echo '<a href="' . esc_url(get_pagenum_link($i)) . '">' . $i . '</a>';
+                    echo '</li>';
+                }
 
-                else :
+                // Виводимо ваш SVG код
+                echo '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">';
+                echo '<path d="M17.3145 1L21 5M21 5L17.3145 9M21 5L1 5" stroke="#333333" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+                echo '</svg>';
 
-                    get_template_part( 'template-parts/content', 'none' );
+                echo '</ul>';
+            } else {
+                get_template_part( 'template-parts/content', 'none' );
+            }
 
-                endif;
-                ?>
+            echo '</div>';
+        ?>
 
-            </div>
 
-            <ul class="pagination">
+            <!---<ul class="pagination">
                 <li>
                     <a href="/">1</a>
                 </li>
@@ -45,7 +58,8 @@ get_header();
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
                     <path d="M17.3145 1L21 5M21 5L17.3145 9M21 5L1 5" stroke="#333333" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </ul>
+            </ul>---->
+
         </div>
     </section>
 
