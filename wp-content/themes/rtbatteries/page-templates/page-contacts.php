@@ -3,18 +3,21 @@
  * Template name: Contact us
  */
 get_header();
+if(!empty(get_field('strings'))) {
+    $strings = get_field('strings');
+}
 ?>
 
 <div class="contacts-page">
     <section>
         <div class="container">
             <p class="title title_3 center"><?php the_title(); ?></p>
-            <p class="subtitle center"><?= pll__('Any question, returns or concerns? Just write us a message!');?></p>
+            <p class="subtitle center"><?= $strings['string_1']; ?></p>
         </div>
         <div class="container contacts-wrapper">
             <div class="contacts_info">
-                <p class="contacts_title"><?= pll__('Contact Information'); ?></p>
-                <p class="subtitle"><?= pll__('Fill out the form and our team will get back to you within 1 business day'); ?></p>
+                <p class="contacts_title"><?= $strings['string_2']; ?></p>
+                <p class="subtitle"><?= $strings['string_3']; ?></p>
                 <ul class="contacts">
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
