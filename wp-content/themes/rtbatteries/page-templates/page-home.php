@@ -3,17 +3,18 @@
  * Template name: Home
  */
 get_header();
+if(!empty(get_field('strings'))) {
+    $strings = get_field('strings');
+}
 ?>
 
 <section class="banner scroll-y">
     <div class="container">
         <div class="banner_content">
-            <p class="title">
-                Let's start<span>looking</span>
-            </p>
-            <p class="subtitle">for the right <span>CMOS</span> battery</p>
+            <p class="title"><?= $strings['string_1']; ?></p>
+            <p class="subtitle"><?= $strings['string_2']; ?></p>
             <div class="btn-secondary md next">
-                <p>Start</p>
+                <p><?= $strings['string_3']; ?></p>
                 <svg viewBox="0 0 14 14" fill="none">
                     <path d="M12.0472 7.17914H6.73456M6.73456 7.17914H1.42188M6.73456 7.17914V12.4918M6.73456 7.17914V1.86646" stroke="#333333" stroke-width="1.93189" stroke-linecap="round"/>
                 </svg>
@@ -28,16 +29,12 @@ get_header();
     <section class="constructor  scroll-y">
         <div class="container">
             <div class="constructor_content desktop">
-                <p class="title">
-                    <span>EASY</span><span>CMOS</span><br>
-                    BATTERY BUILDER
-                </p>
-                <b>Not sure what your computer’s model number is? No Worries! We’ll make you a customized CMOS battery that matches yours.</b>
-                <p>With <b>4 easy steps</b>, we can match the battery size, length, polarity, and the connector type of your original battery for a 100% fit.</p>
+                <p class="title"><?= $strings['string_4']; ?></p>
+                <?= $strings['string_5']; ?>
                 <div class="line"><b>or</b></div>
-                <p>You can see all the CMOS batteries on our website. </p>
+                <p><?= $strings['string_6']; ?></p>
                 <div class="btn-secondary md plus">
-                    <p>See all batteries</p>
+                    <p><?= $strings['string_7']; ?></p>
                     <svg viewBox="0 0 14 14" fill="none">
                         <path d="M12.0472 7.17914H6.73456M6.73456 7.17914H1.42188M6.73456 7.17914V12.4918M6.73456 7.17914V1.86646" stroke="#333333" stroke-width="1.93189" stroke-linecap="round"/>
                     </svg>
@@ -61,11 +58,11 @@ get_header();
                             <p class="label">Start with</p>
                             <ul>
                                 <li data-attr="1111">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/laptop.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/laptop.webp" alt="#">
                                     <p class="name">Laptop models</p>
                                 </li>
                                 <li data-attr="222">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/BATs.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/BATs.webp" alt="#">
                                     <p class="name">Type of battery</p>
                                 </li>
                             </ul>
@@ -74,83 +71,83 @@ get_header();
                             <p class="label">Choose connector type</p>
                             <ul>
                                 <li data-attr="33">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/2_step/FI.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/2_step/FI.webp" alt="#">
                                     <p class="name">Reg 1</p>
                                 </li>
                                 <li data-attr="333">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/FLAT.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/FLAT.webp" alt="#">
                                     <p class="name">Reg 2</p>
                                 </li>
                                 <li data-attr="666">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/LONG.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/LONG.webp" alt="#">
                                     <p class="name">Reg 3</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/LONG3.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/LONG3.webp" alt="#">
                                     <p class="name">Reg 4</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/MICRO.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/MICRO.webp" alt="#">
                                     <p class="name">Reg 3</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/PS.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/PS.webp" alt="#">
                                     <p class="name">Reg 4</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/REG.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/REG.webp" alt="#">
                                     <p class="name">Reg 3</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/REG3.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/REG3.webp" alt="#">
                                     <p class="name">Reg 4</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/SLIM.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/SLIM.webp" alt="#">
                                     <p class="name">Reg 5</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/SLIM3.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/SLIM3.webp" alt="#">
                                     <p class="name">Reg 6</p>
                                 </li>
                                 <li data-attr="33">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/2_step/FI.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/2_step/FI.webp" alt="#">
                                     <p class="name">Reg 1</p>
                                 </li>
                                 <li data-attr="333">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/FLAT.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/FLAT.webp" alt="#">
                                     <p class="name">Reg 2</p>
                                 </li>
                                 <li data-attr="666">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/LONG.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/LONG.webp" alt="#">
                                     <p class="name">Reg 3</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/LONG3.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/LONG3.webp" alt="#">
                                     <p class="name">Reg 4</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/MICRO.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/MICRO.webp" alt="#">
                                     <p class="name">Reg 3</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/PS.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/PS.webp" alt="#">
                                     <p class="name">Reg 4</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/REG.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/REG.webp" alt="#">
                                     <p class="name">Reg 3</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/REG3.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/REG3.webp" alt="#">
                                     <p class="name">Reg 4</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/SLIM.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/SLIM.webp" alt="#">
                                     <p class="name">Reg 5</p>
                                 </li>
                                 <li>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/2_step/SLIM3.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/2_step/SLIM3.webp" alt="#">
                                     <p class="name">Reg 6</p>
                                 </li>
                             </ul>
@@ -160,11 +157,11 @@ get_header();
                             <ul>
                                 <li>
                                     <p class="type">- / + / -</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/3_step/polarity.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/3_step/polarity.webp" alt="#">
                                 </li>
                                 <li>
                                     <p class="type">- / E / +</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/3_step/polarity_2.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/3_step/polarity_2.webp" alt="#">
                                 </li>
                             </ul>
                         </div>
@@ -174,25 +171,25 @@ get_header();
                                 <li>
                                     <p class="type">Length: 1 cm - 3.9 cm</p>
                                     <p class="subtype">(0.39 in - 1.53 in)</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/imagerrr2.png" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/imagerrr2.png" alt="#">
                                     <span class="size">L</span>
                                 </li>
                                 <li>
                                     <p class="type">Length: 1 cm - 3.9 cm</p>
                                     <p class="subtype">(0.39 in - 1.53 in)</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/imagerrr2.png" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/imagerrr2.png" alt="#">
                                     <span class="size">C</span>
                                 </li>
                                 <li>
                                     <p class="type">Length: 1 cm - 3.9 cm</p>
                                     <p class="subtype">(0.39 in - 1.53 in)</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/imagerrr2.png" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/imagerrr2.png" alt="#">
                                     <span class="size">L</span>
                                 </li>
                                 <li>
                                     <p class="type">Length: 1 cm - 3.9 cm</p>
                                     <p class="subtype">(0.39 in - 1.53 in)</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/imagerrr2.png" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/imagerrr2.png" alt="#">
                                     <span class="size">XL</span>
                                 </li>
                             </ul>
@@ -203,19 +200,19 @@ get_header();
                                 <li>
                                     <p class="type">Length: 12,5 mm</p>
                                     <p class="subtype">Height - 27 mm</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/5_step/CR1220.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/5_step/CR1220.webp" alt="#">
                                     <p class="name">CR1220</p>
                                 </li>
                                 <li>
                                     <p class="type">Length: 2,5 mm</p>
                                     <p class="subtype">Height - 42 mm</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/5_step/CR3032.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/5_step/CR3032.webp" alt="#">
                                     <p class="name">CR3032</p>
                                 </li>
                                 <li>
                                     <p class="type">Length: 12 mm</p>
                                     <p class="subtype">Height - 2 mm</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bulder/5_step/ML1220.webp" alt="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/bulder/5_step/ML1220.webp" alt="#">
                                     <p class="name">ML1220</p>
                                 </li>
                             </ul>
@@ -283,11 +280,11 @@ get_header();
     <section class="video-section extra scroll-y">
         <div class="container">
             <div class="row">
-                <iframe class="desktop" src="https://www.youtube.com/embed/C63v7cKHies" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe class="desktop" src="<?= get_field('youtube_link'); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="column">
-                    <p class="title title_2">Let's help you <br> choose a battery</p>
+                    <p class="title title_2"><?= $strings['string_9']; ?></p>
                     <iframe class="mobile" src="https://www.youtube.com/embed/C63v7cKHies" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <p class="subtitle-secondary">In this video, we will explore crucial factors like connector types, polarity, wire length, and coin cell type to ensure compatibility with your hardware.</p>
+                    <p class="subtitle-secondary"><?= $strings['string_10']; ?></p>
                 </div>
             </div>
         </div>
@@ -312,46 +309,26 @@ get_header();
 
     <section class="clients-section scroll-y">
         <div class="container">
-            <img class="coin" src="<?php echo get_template_directory_uri(); ?>/assets/images/coin1.png" alt="#">
-            <p class="title center">our clients</p>
+            <img class="coin" src="<?= get_template_directory_uri(); ?>/images/coin1.png" alt="#">
+            <p class="title center"><?= $strings['string_11']; ?></p>
 
             <div class="swiper-container swiper clients-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/1200px-Northrop_Grumman_logo_blue-on-clear_2020.svg.png" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/Emblem_of_the_United_States_Navy.svg.png" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/image 335.webp" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/image 336.webp" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/image 338.webp" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/1200px-Northrop_Grumman_logo_blue-on-clear_2020.svg.png" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/Emblem_of_the_United_States_Navy.svg.png" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/image 335.webp" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/image 336.webp" alt="#" title="#">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partners/image 338.webp" alt="#" title="#">
-                    </div>
+                    <?php 
+                        if(!empty(get_field('clients_gallery'))) {
+                            $clients_gallery = get_field('clients_gallery');
+                            foreach($clients_gallery as $img) {
+                                echo '<div class="swiper-slide">';
+                                    echo '<img src="'.$img['url'].'" alt="'.$img['alt'].'" title="'.$img['title'].'">';
+                                echo '</div>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
 
-            <img class="coin" src="<?php echo get_template_directory_uri(); ?>/assets/images/coin2.png" alt="#">
+            <img class="coin" src="<?= get_template_directory_uri(); ?>/images/coin2.png" alt="#">
         </div>
     </section>
 
