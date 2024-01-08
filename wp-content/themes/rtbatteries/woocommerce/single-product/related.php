@@ -21,24 +21,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $related_products ) : ?>
 
-	<section class="related products">
-        <h2><?php pll_e( 'You Might Also Like' ) ?></h2>
+	<section class="related-products-slider">
+        <h2 class="title"><?php pll_e( 'You Might Also Like' ) ?></h2>
 
-		<?php woocommerce_product_loop_start(); ?>
+        <div class="swiper-container swiper products-slider">
+            <div class="swiper-wrapper">
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+                <?php foreach ( $related_products as $related_product ) : ?>
+                    <div class="swiper-slide">
+                        <?php
+                        $post_object = get_post( $related_product->get_id() );
 
-                <?php
-                $post_object = get_post( $related_product->get_id() );
+                        setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-                setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+                        wc_get_template_part( 'content', 'product' );
+                        ?>
+                    </div>
 
-                wc_get_template_part( 'content', 'product' );
-                ?>
+                <?php endforeach; ?>
 
-			<?php endforeach; ?>
-
-		<?php woocommerce_product_loop_end(); ?>
+            </div>
+        </div>
 
 	</section>
 	<?php

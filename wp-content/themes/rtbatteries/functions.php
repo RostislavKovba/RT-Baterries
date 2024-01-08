@@ -27,3 +27,9 @@ function debug($data) {
 	print_r($data);
 	echo '</pre>';
 }
+
+function wt_mime_types($mime_types) {
+    $mime_types['webp'] = 'image/webp'; //Adding webp extension
+    return $mime_types;
+}
+add_filter('upload_mimes', 'wt_mime_types', 1, 1);

@@ -1,0 +1,393 @@
+# Translation of Plugins - Premmerce Product Filter for WooCommerce - Stable (latest release) in Ukrainian
+# This file is distributed under the same license as the Plugins - Premmerce Product Filter for WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-08-28 11:43:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: uk_UA\n"
+"Project-Id-Version: Plugins - Premmerce Product Filter for WooCommerce - Stable (latest release)\n"
+
+#: views/admin/tabs/bundle-and-save/texts.php:74
+msgid "Read more"
+msgstr "Читати далі"
+
+#: views/admin/tabs/bundle-and-save/pricing.php:95
+msgid "Buy now"
+msgstr "Придбати зараз"
+
+#: src/Seo/RulesTable.php:128
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: src/Seo/RulesTable.php:230
+msgid "Filter by category"
+msgstr "Фільтр по категорії"
+
+#: src/Seo/RulesTable.php:142
+msgid "Disable"
+msgstr "Вимкнути"
+
+#: src/Seo/RulesTable.php:126
+msgid "Label"
+msgstr "Мітка"
+
+#: views/admin/seo/generate-rules.php:111
+msgid "Select terms"
+msgstr "Оберіть значення"
+
+#: src/Seo/RulesTable.php:202 views/frontend/filter.php:125
+msgid "Filter"
+msgstr "Фільтр"
+
+#: src/Admin/Tabs/Settings.php:131
+msgid "Styles"
+msgstr "Стилі"
+
+#: src/Admin/Tabs/Settings.php:122
+msgid "AJAX"
+msgstr "AJAX"
+
+#: views/admin/seo/generate-rules.php:57 views/admin/seo/generate-rules.php:106
+#: views/admin/tabs/taxonomy.php:38
+msgid "Terms"
+msgstr "Значення"
+
+#: src/Admin/Tabs/Attributes.php:336 src/Widget/FilterWidget.php:115
+msgid "Default"
+msgstr "За замовчуванням"
+
+#: src/Admin/Tabs/Attributes.php:340
+msgid "Dropdown"
+msgstr "Випадаючий список"
+
+#: src/Admin/Tabs/Attributes.php:344
+msgid "Scroll"
+msgstr "Прокрутка"
+
+#: src/Admin/Tabs/Attributes.php:348
+msgid "Scroll + Dropdown"
+msgstr "Випадаючий список + Прокрутка"
+
+#: views/admin/macros.php:136
+msgid "H1"
+msgstr "H1"
+
+#: views/admin/macros.php:166
+msgid "Meta description"
+msgstr "Мета опис"
+
+#: views/admin/macros.php:11
+msgid "Category description"
+msgstr "Опис категорії"
+
+#: src/Seo/RulesTable.php:140 views/admin/seo/table/column-h1.php:30
+msgid "Delete"
+msgstr "Видалити"
+
+#: src/Seo/RulesTable.php:141 views/admin/macros.php:228
+msgid "Enable"
+msgstr "Увімкнути"
+
+#: views/admin/macros.php:10
+msgid "Category name"
+msgstr "Назва категорії"
+
+#: views/admin/macros.php:14
+msgid "Min price"
+msgstr "Мінімальна ціна"
+
+#: views/admin/macros.php:16
+msgid "Number of products"
+msgstr "Кількість товарів"
+
+#: views/admin/macros.php:70 views/admin/seo/generate-rules.php:46
+#: views/admin/seo/generate-rules.php:93
+msgid "Select taxonomy"
+msgstr "Виберіть таксономію"
+
+#: views/admin/macros.php:182
+msgid "Description"
+msgstr "Опис"
+
+#: views/admin/macros.php:233
+msgid "Enable this rule."
+msgstr "Увімкнути це правило."
+
+#: views/admin/seo/form.php:28 views/admin/seo/form.php:83
+msgid "Add new rule"
+msgstr "Додати нове правило"
+
+#: views/admin/seo/form.php:32 views/admin/seo/generate-rules.php:15
+msgid "Back"
+msgstr "Назад"
+
+#: views/admin/seo/form.php:36
+msgid "Visit page"
+msgstr "Відвідайте сторінку"
+
+#: views/admin/seo/form.php:41 views/admin/seo/form.php:85
+msgid "Update rule"
+msgstr "Оновити правило"
+
+#: views/admin/seo/form.php:54
+msgid "Taxonomy"
+msgstr "Таксономія"
+
+#: views/admin/seo/form.php:74
+msgid "Add"
+msgstr "Додати"
+
+#: views/admin/seo/generate-rules.php:23
+msgid "Generate rules"
+msgstr "Згенерувати правила"
+
+#: views/admin/seo/generate-rules.php:25
+msgid "Categories"
+msgstr "Категорії"
+
+#: views/admin/seo/generate-rules.php:28
+msgid "Select category"
+msgstr "Виберіть категорію"
+
+#: src/Admin/Tabs/Settings.php:192 views/admin/seo/generate-rules.php:40
+#: views/admin/seo/generate-rules.php:89
+msgid "Taxonomies"
+msgstr "Таксономії"
+
+#: views/admin/seo/generate-rules.php:76
+msgid "Add taxonomy"
+msgstr "Додати таксономію"
+
+#: views/admin/seo/generate-rules.php:81
+msgid "Generate"
+msgstr "Згенерувати"
+
+#: views/admin/seo/table/column-h1.php:24
+msgid "Edit"
+msgstr "Редагувати"
+
+#: views/admin/tabs/seo.php:27
+msgid "Generate Rules"
+msgstr "Згенерувати правила"
+
+#: views/admin/tabs/seo.php:36
+msgid "Update paths"
+msgstr "Оновити шляхи"
+
+#: src/Admin/Tabs/Attributes.php:320
+msgid "Checkbox"
+msgstr "Чекбокс"
+
+#: views/admin/macros.php:97 views/admin/macros.php:105
+#: views/admin/seo/generate-rules.php:64 views/admin/seo/generate-rules.php:69
+#: views/admin/seo/generate-rules.php:114
+msgid "Select term"
+msgstr "Виберіть значення"
+
+#: src/Admin/Tabs/Attributes.php:324
+msgid "Radio"
+msgstr "Перемикач"
+
+#: views/admin/seo/table/column-h1.php:35
+msgid "View"
+msgstr "Перегляд"
+
+#: views/admin/macros.php:15
+msgid "Max price"
+msgstr "Найбільша ціна"
+
+#: src/Admin/Tabs/Attributes.php:328
+msgid "Select"
+msgstr "Обрати"
+
+#: src/Seo/RulesTable.php:125 views/admin/seo/form.php:45
+msgid "Category"
+msgstr "Категорія"
+
+#: views/admin/seo/form.php:55
+msgid "Term"
+msgstr "Термін"
+
+#: src/Admin/Tabs/Attributes.php:359 views/admin/tabs/attributes.php:58
+msgid "Field type"
+msgstr "Тип поля"
+
+#: src/Admin/Tabs/Attributes.php:360 views/admin/tabs/attributes.php:61
+msgid "Display as"
+msgstr "Відображати як"
+
+#: src/Admin/Tabs/Settings.php:51
+msgid "Show price filter"
+msgstr "Показувати фільтр по ціні"
+
+#: src/Widget/ActiveFilterWidget.php:20
+msgid "Product attributes active filters"
+msgstr "Активні фільтри атрибутів товарів "
+
+#: views/frontend/active_filters.php:37
+msgid "Remove filter"
+msgstr "Видалити фільтр"
+
+#. translators: %s: number of rate
+#: src/Widget/ActiveFilterWidget.php:55
+msgid "Rated %s out of 5"
+msgstr "Оцінено в %s з 5"
+
+#: src/Filter/Items/Types/PriceFilter.php:56
+msgid "Filter by price"
+msgstr "Фільтрувати за ціною"
+
+#. translators: %s: min number
+#: src/Filter/Items/Types/PriceFilter.php:95
+msgid "Min %s"
+msgstr "Найменша %s"
+
+#. translators: %s: max number
+#: src/Filter/Items/Types/PriceFilter.php:102
+msgid "Max %s"
+msgstr "Найбільша %s"
+
+#: src/Widget/ActiveFilterWidget.php:18
+msgid "Premmerce Active Filters"
+msgstr "Активні фільтри Premmerce"
+
+#: src/Admin/Admin.php:135 src/Admin/Admin.php:136
+msgid "Product Filter"
+msgstr "Налаштування фільтру"
+
+#: views/admin/tabs/cache.php:12
+msgid "Clear cache"
+msgstr "Очистити кеш"
+
+#. translators: %s: label
+#: views/frontend/types/select.php:9
+msgid "Any %s"
+msgstr "Будь-який %s"
+
+#: src/Admin/Tabs/Cache.php:72 views/admin/tabs/cache.php:6
+msgid "Cache"
+msgstr "Кеш"
+
+#: src/Admin/Tabs/Settings.php:112
+msgid "Store"
+msgstr "Магазин"
+
+#: src/Admin/Tabs/Settings.php:108 views/admin/tabs/seo.php:51
+msgid "Search"
+msgstr "Пошук"
+
+#: src/Admin/Tabs/Settings.php:100
+msgid "Product category"
+msgstr "Категорія товарів"
+
+#: src/Admin/Tabs/Settings.php:96
+msgid "Show filter on pages"
+msgstr "Показувати фільтр на строрінках"
+
+#: src/Admin/Tabs/Settings.php:46
+msgid "Hide empty terms"
+msgstr "Не показувати порожні значення"
+
+#: src/Admin/Tabs/Settings.php:41
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: views/admin/tabs/brands.php:25
+msgid "Brand"
+msgstr "Бренд"
+
+#: views/admin/tabs/attributes.php:281 views/admin/tabs/brands.php:56
+#: views/admin/tabs/taxonomy.php:69
+msgid "No items found"
+msgstr "Значень не знайдено"
+
+#: src/Admin/Tabs/Attributes.php:358 views/admin/tabs/attributes.php:68
+#: views/admin/tabs/brands.php:26 views/admin/tabs/taxonomy.php:39
+msgid "Visibility"
+msgstr "Видимість"
+
+#: src/Admin/Tabs/Settings.php:116 views/admin/tabs/attributes.php:64
+msgid "Attribute"
+msgstr "Атрибут"
+
+#: views/admin/tabs/actions.php:29
+msgid "Apply"
+msgstr "Застосувати"
+
+#: views/admin/tabs/actions.php:12
+msgid "Select bulk action"
+msgstr "Виберіть групову дію"
+
+#: src/Widget/FilterWidget.php:17
+msgid "Product attributes filter"
+msgstr "Фільтр товарів по атрибутах"
+
+#: src/Admin/Tabs/Attributes.php:357 src/Admin/Tabs/Taxonomy.php:78
+msgid "Bulk Actions"
+msgstr "Групові дії"
+
+#: src/Admin/Admin.php:285
+msgid "Account"
+msgstr "Аккаунт"
+
+#: src/Admin/Admin.php:295
+msgid "Contact Us"
+msgstr "Зв'яжіться з нами"
+
+#: src/Admin/Tabs/Settings.php:229
+msgid "Settings"
+msgstr "Налаштування"
+
+#: views/admin/macros.php:13 views/admin/tabs/brands.php:11
+msgid "Brands"
+msgstr "Бренди"
+
+#: src/Admin/Tabs/Attributes.php:91 views/admin/macros.php:12
+#: views/admin/tabs/attributes.php:21
+msgid "Attributes"
+msgstr "Атрибути"
+
+#. Plugin URI of the plugin
+msgid "https://premmerce.com/woocommerce-product-filter/"
+msgstr "https://premmerce.com/woocommerce-product-filter/"
+
+#. Author URI of the plugin
+msgid "https://premmerce.com"
+msgstr "https://premmerce.com"
+
+#. Description of the plugin
+msgid "Premmerce Product Filter for WooCommerce plugin is a convenient and flexible tool for managing filters for WooCommerce products."
+msgstr "Premmerce Плагін WooCommerce Product Filter - це зручний та гнучкий інструмент для керування фільтрами для продуктів WooCommerce."
+
+#: src/Admin/Tabs/Settings.php:104
+msgid "Tag"
+msgstr "Позначка"
+
+#: src/Admin/Tabs/Attributes.php:314 src/Admin/Tabs/Taxonomy.php:80
+#: views/admin/tabs/attributes.php:226 views/admin/tabs/brands.php:45
+#: views/admin/tabs/taxonomy.php:58
+msgid "Hide"
+msgstr "Сховати"
+
+#: src/Admin/Tabs/Attributes.php:310 src/Admin/Tabs/Taxonomy.php:79
+#: views/admin/tabs/attributes.php:226 views/admin/tabs/brands.php:45
+#: views/admin/tabs/taxonomy.php:58
+msgid "Display"
+msgstr "Відображення"
+
+#: views/admin/filter-widget.php:18 views/admin/macros.php:151
+msgid "Title"
+msgstr "Заголовок"
+
+#. translators: %%1$s: our plugin name, %2$s another plugin name
+#: src/FilterPlugin.php:244
+msgid "The %1$s plugin requires %2$s plugin to be active!"
+msgstr "Плагін %1$s вимагає активації плагіна %2$s!"
+
+#: src/Widget/FilterWidget.php:16
+msgid "Premmerce Filter"
+msgstr "Фільтр Premmerce"

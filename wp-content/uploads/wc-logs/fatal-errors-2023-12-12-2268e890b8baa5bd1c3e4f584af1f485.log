@@ -1,0 +1,24 @@
+2023-12-12T15:56:40+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function woocommerce_comments(), 0 passed in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooProduct.php on line 76 and exactly 3 expected in W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1968
+Stack trace:
+#0 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooProduct.php(76): woocommerce_comments()
+#1 W:\domains\rtb\wp-includes\class-wp-hook.php(324): RT_WooProduct->custom_reviews()
+#2 W:\domains\rtb\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 W:\domains\rtb\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\content-single-product.php(72): do_action()
+#5 W:\domains\rtb\wp-includes\template.php(792): require('W:\\domains\\rtb\\...')
+#6 W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#7 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\single-product.php(40): wc_get_template_part()
+ in W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1968
+
+2023-12-12T16:01:44+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function woocommerce_comments(), 0 passed in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooProduct.php on line 76 and exactly 3 expected in W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1968
+Stack trace:
+#0 W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooProduct.php(76): woocommerce_comments()
+#1 W:\domains\rtb\wp-includes\class-wp-hook.php(324): RT_WooProduct->custom_reviews()
+#2 W:\domains\rtb\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 W:\domains\rtb\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\content-single-product.php(72): do_action()
+#5 W:\domains\rtb\wp-includes\template.php(792): require('W:\\domains\\rtb\\...')
+#6 W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#7 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\single-product.php(40): wc_get_template_part()
+ in W:\domains\rtb\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1968
+

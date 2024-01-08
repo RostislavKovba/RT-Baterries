@@ -82,13 +82,13 @@ class RT_Batteries
 	public function widgets_init() {
 		register_sidebar(
 			[
-				'name'          => esc_html__( 'Sidebar', _S_DOMAIN ),
-				'id'            => 'sidebar-1',
+				'name'          => esc_html__( 'Sidebar filter' , _S_DOMAIN ),
+				'id'            => 'sidebar-shop',
 				'description'   => esc_html__( 'Add widgets here.', _S_DOMAIN ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</section>',
-				'before_title'  => '<h2 class="widget-title">',
-				'after_title'   => '</h2>',
+				'before_sidebar' => '<div id="sidebar-shop" class="widget filter-wrapper">',
+				'after_sidebar'  => '</div>',
+				'before_title'  => '<h3 class="filter-title">',
+				'after_title'   => '</h3>',
 			]
 		);
 	}

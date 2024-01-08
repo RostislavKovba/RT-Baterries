@@ -9,18 +9,14 @@ $current_lang   = pll_current_language( 'slug' );
     </svg>
     <select class="desktop">
         <?php
-//        foreach( $languages as $lang ) {
-//	        printf(
-//		        '<option value="1" data-display="%2$s">%2$s</option>',
-//		        $lang['url'],
-//		        $lang['name'],
-//	        );
-//            debug($lang);
-//        }
+        foreach( $languages as $lang ) {
+	        printf(
+		        '<option value="1" data-display="%2$s">%2$s</option>',
+		        $lang['url'],
+		        $lang['name'],
+	        );
+        }
         ?>
-        <option value="1" data-display="English">English</option>
-        <option value="1">Ukrainian</option>
-        <option value="1">German</option>
     </select>
 </div>
 

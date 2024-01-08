@@ -9,6 +9,139 @@ Requires PHP: 7.4
 Text Domain: rtbatteries
 */
 
-*{
+* {
     outline: none !important;
 }
+
+body.admin-bar header .header-bg {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar header .header-bg {
+        top: 46px;
+    }
+}
+
+.woocommerce p.stars a {
+    position: relative;
+    height: 1em;
+    width: 1em;
+    text-indent: -999em;
+    display: inline-block;
+    text-decoration: none
+}
+
+.woocommerce p.stars a::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    font-family: WooCommerce;
+    content: "\e021";
+    text-indent: 0
+}
+
+.woocommerce p.stars a:hover~a::before {
+    content: "\e021"
+}
+
+.woocommerce p.stars:hover a::before {
+    content: "\e020"
+}
+
+.woocommerce p.stars.selected a.active::before {
+    content: "\e020"
+}
+
+.woocommerce p.stars.selected a.active~a::before {
+    content: "\e021"
+}
+
+.woocommerce p.stars.selected a:not(.active)::before {
+    content: "\e020"
+}
+
+.woocommerce table.shop_attributes {
+    border: 0;
+    border-top: 1px dotted rgba(0,0,0,.1);
+    margin-bottom: 1.618em;
+    width: 100%
+}
+
+.woocommerce table.shop_attributes th {
+    width: 150px;
+    font-weight: 700;
+    padding: 8px;
+    border-top: 0;
+    border-bottom: 1px dotted rgba(0,0,0,.1);
+    margin: 0;
+    line-height: 1.5
+}
+
+.woocommerce table.shop_attributes td {
+    font-style: italic;
+    padding: 0;
+    border-top: 0;
+    border-bottom: 1px dotted rgba(0,0,0,.1);
+    margin: 0;
+    line-height: 1.5
+}
+
+.woocommerce table.shop_attributes td p {
+    margin: 0;
+    padding: 8px 0
+}
+
+.woocommerce table.shop_attributes tr:nth-child(even) td,.woocommerce table.shop_attributes tr:nth-child(even) th {
+    background: rgba(0,0,0,.025)
+}
+
+.woocommerce table.shop_table {
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 5px
+}
+
+.woocommerce table.shop_table th {
+    font-weight: 700;
+    padding: 9px 12px;
+    line-height: 1.5em
+}
+
+.woocommerce table.shop_table td {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 9px 12px;
+    vertical-align: middle;
+    line-height: 1.5em
+}
+
+.woocommerce table.shop_table td small {
+    font-weight: 400
+}
+
+.woocommerce table.shop_table td del {
+    font-weight: 400
+}
+
+.woocommerce table.shop_table tbody:first-child tr:first-child td,.woocommerce table.shop_table tbody:first-child tr:first-child th {
+    border-top: 0
+}
+
+.woocommerce table.shop_table tbody th,.woocommerce table.shop_table tfoot td,.woocommerce table.shop_table tfoot th {
+    font-weight: 700;
+    border-top: 1px solid rgba(0,0,0,.1)
+}
+
+.woocommerce .quantity .qty {
+    width: 3.631em;
+    text-align: center
+}
+
+

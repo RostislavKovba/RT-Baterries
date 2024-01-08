@@ -1,6 +1,0 @@
-2023-10-15T09:33:26+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in D:\Backend\OSPanel\domains\battery\wp-includes\Requests\src\Transport\Curl.php on line 205
-
-2023-10-15T09:47:36+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in D:\Backend\OSPanel\domains\battery\wp-content\themes\rtbatteries\index.php on line 66
-
-2023-10-15T09:47:37+00:00 CRITICAL syntax error, unexpected '===' (T_IS_IDENTICAL), expecting end of file in D:\Backend\OSPanel\domains\battery\wp-content\themes\rtbatteries\index.php on line 66
-

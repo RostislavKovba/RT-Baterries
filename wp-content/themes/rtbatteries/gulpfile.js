@@ -23,15 +23,38 @@ const gulp                      = require('gulp'),
       dependents                = require('gulp-dependents'),
 
       src_folder                = './src/',
-      src_assets_folder         = src_folder,
-      dist_folder               = './assets/',
-      dist_assets_folder        = dist_folder,
+      src_assets_folder         = src_folder + 'assets/',
+      dist_folder               = './dist/',
+      dist_assets_folder        = dist_folder + 'assets/',
       node_modules_folder       = './node_modules/',
       dist_node_modules_folder  = dist_folder + 'node_modules/',
 
       node_dependencies         = Object.keys(require('./package.json').dependencies || {});
 
 gulp.task('clear', () => del([ dist_folder ]));
+
+gulp.task('html', () => {
+  return gulp.src([ src_folder + '**/*.html' ], {
+    base: src_folder,
+    since: gulp.lastRun('html')
+  })
+    .pipe(rigger())
+    .pipe(gulp.dest(dist_folder))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('pug', () => {
+  return gulp.src([ src_folder + 'pug/**/!(_)*.pug' ], {
+    base: src_folder + 'pug',
+    since: gulp.lastRun('pug')
+  })
+    .pipe(plumber())
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest(dist_folder))
+    .pipe(browserSync.stream());
+});
 
 gulp.task('sass', () => {
   return gulp.src([
@@ -91,6 +114,14 @@ gulp.task('js', () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task('images', () => {
+  return gulp.src([ src_assets_folder + 'images/**/*.+(png|jpg|jpeg|webp|gif|svg|ico)' ], { since: gulp.lastRun('images') })
+    .pipe(plumber())
+    .pipe(imagemin())
+    .pipe(gulp.dest(dist_assets_folder + 'images'))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('vendor', () => {
   if (node_dependencies.length === 0) {
     return new Promise((resolve) => {
@@ -107,8 +138,14 @@ gulp.task('vendor', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'sass', 'less', 'stylus', 'js', 'vendor'));
-gulp.task('dev', gulp.series('sass', 'less', 'stylus', 'js'));
+// with pug, without rigger
+// gulp.task('build', gulp.series('clear', 'html', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+// gulp.task('dev', gulp.series('html', 'pug', 'sass', 'less', 'stylus', 'js'));
+
+// without pug, with rigger
+// gulp.task('build', gulp.series('clear', 'html', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'sass', 'less', 'stylus', 'js', 'vendor'));
+gulp.task('dev', gulp.series('html', 'sass', 'less', 'stylus', 'js'));
 
 gulp.task('serve', () => {
   return browserSync.init({
@@ -121,6 +158,10 @@ gulp.task('serve', () => {
 });
 
 gulp.task('watch', () => {
+  const watchImages = [
+    src_assets_folder + 'images/**/*.+(png|jpg|jpeg|webp|gif|svg|ico)'
+  ];
+
   const watchVendor = [];
 
   node_dependencies.forEach(dependency => {
@@ -128,6 +169,9 @@ gulp.task('watch', () => {
   });
 
   const watch = [
+    src_folder + '**/*.html',
+    src_folder + 'pug/**/*.pug',
+    src_folder + 'templates/**/*.html',
     src_assets_folder + 'sass/**/*.sass',
     src_assets_folder + 'scss/**/*.scss',
     src_assets_folder + 'less/**/*.less',
@@ -136,6 +180,7 @@ gulp.task('watch', () => {
   ];
 
   gulp.watch(watch, gulp.series('dev')).on('change', browserSync.reload);
+  // gulp.watch(watchImages, gulp.series('images')).on('change', browserSync.reload);
   gulp.watch(watchVendor, gulp.series('vendor')).on('change', browserSync.reload);
 });
 

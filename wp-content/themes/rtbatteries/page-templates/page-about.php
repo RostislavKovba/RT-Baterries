@@ -1,7 +1,6 @@
 <?php
 /**
  * Template name: About us
- * Template post type: page
  */
 get_header();
 if(!empty(get_field('strings'))) {

@@ -3,8 +3,7 @@
 	/**
 	 * Quantity "plus" and "minus" buttons
 	 */
-	$(document.body ).on( 'click', '.plus, .minus', function(e) {
-		console.log(e.target);
+	function quantityChange(e) {
 		e.preventDefault();
 		var $qty        = $( this ).closest( '.quantity' ).find( '.qty'),
 			currentVal  = parseFloat( $qty.val() ),
@@ -37,8 +36,36 @@
 			}
 		}
 
-		// Trigger change event
 		$qty.trigger( 'change' );
-	});
-}( jQuery ) );
+	}
 
+
+	if ( ! String.prototype.getDecimals ) {
+		String.prototype.getDecimals = function() {
+			var num = this,
+				match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+			if ( ! match ) {
+				return 0;
+			}
+			return Math.max( 0, ( match[1] ? match[1].length : 0 ) - ( match[2] ? +match[2] : 0 ) );
+		}
+	}
+
+	/**
+	 * Update cart on input change
+	 */
+	function updateCart() {
+		let timeout;
+
+		if ( timeout !== undefined ) {
+			clearTimeout( timeout );
+		}
+		timeout = setTimeout(function() {
+			$("[name='update_cart']").trigger("click"); // trigger cart update
+		}, 1000 );
+	}
+
+
+	$( document.body ).on( 'click', '.plus, .minus', quantityChange);
+	$('.woocommerce').on('change', 'input.qty', updateCart);
+}( jQuery ) );

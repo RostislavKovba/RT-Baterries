@@ -1,7 +1,6 @@
 <?php
 /**
  * Template name: Blog
- * Template post type: page
  */
 get_header();
 ?>
@@ -20,20 +19,18 @@ get_header();
                     get_template_part( 'template-parts/content', get_post_type() );
                 }
 
-                // Виводимо пагінацію
-                echo '<ul class="pagination">';
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    echo '<li>';
-                    echo '<a href="' . esc_url(get_pagenum_link($i)) . '">' . $i . '</a>';
-                    echo '</li>';
-                }
-
-                // Виводимо ваш SVG код
-                echo '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">';
-                echo '<path d="M17.3145 1L21 5M21 5L17.3145 9M21 5L1 5" stroke="#333333" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-                echo '</svg>';
-
-                echo '</ul>';
+//                echo '<ul class="pagination">';
+//                for ($i = 1; $i <= $total_pages; $i++) {
+//                    echo '<li>';
+//                    echo '<a href="' . esc_url(get_pagenum_link($i)) . '">' . $i . '</a>';
+//                    echo '</li>';
+//                }
+//
+//                echo '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">';
+//                echo '<path d="M17.3145 1L21 5M21 5L17.3145 9M21 5L1 5" stroke="#333333" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+//                echo '</svg>';
+//
+//                echo '</ul>';
             } else {
                 get_template_part( 'template-parts/content', 'none' );
             }

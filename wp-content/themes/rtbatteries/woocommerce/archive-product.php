@@ -59,58 +59,45 @@ get_header( 'shop' );
     do_action( 'woocommerce_before_shop_loop' );
     ?>
 
-    <div class="container d-flex">
-        <div class="filter-wrapper">
-            <div class="filter">
-            <?php
-            /**
-             * Hook: woocommerce_sidebar.
-             *
-             * @hooked woocommerce_get_sidebar - 10
-             */
-            do_action( 'woocommerce_sidebar' );
-            ?>
-            </div>
-        </div>
+    <div class="product-list">
+        <?php
+//            woocommerce_catalog_ordering();
 
-        <div class="product-list">
-            <?php
-            if ( woocommerce_product_loop() ) {
+        if ( woocommerce_product_loop() ) {
 
-                woocommerce_product_loop_start();
+            woocommerce_product_loop_start();
 
-                if ( wc_get_loop_prop( 'total' ) ) {
-                    while ( have_posts() ) {
-                        the_post();
+            if ( wc_get_loop_prop( 'total' ) ) {
+                while ( have_posts() ) {
+                    the_post();
 
-                        /**
-                         * Hook: woocommerce_shop_loop.
-                         */
-                        do_action( 'woocommerce_shop_loop' );
+                    /**
+                     * Hook: woocommerce_shop_loop.
+                     */
+                    do_action( 'woocommerce_shop_loop' );
 
-                        wc_get_template_part( 'content', 'product' );
-                    }
+                    wc_get_template_part( 'content', 'product' );
                 }
-
-                woocommerce_product_loop_end();
-
-                /**
-                 * Hook: woocommerce_after_shop_loop.
-                 *
-                 * @hooked woocommerce_pagination - 10
-                 */
-                do_action( 'woocommerce_after_shop_loop' );
-            } else {
-                /**
-                 * Hook: woocommerce_no_products_found.
-                 *
-                 * @hooked wc_no_products_found - 10
-                 */
-                do_action( 'woocommerce_no_products_found' );
             }
 
-            ?>
-        </div>
+            woocommerce_product_loop_end();
+
+            /**
+             * Hook: woocommerce_after_shop_loop.
+             *
+             * @hooked woocommerce_pagination - 10
+             */
+            do_action( 'woocommerce_after_shop_loop' );
+        } else {
+            /**
+             * Hook: woocommerce_no_products_found.
+             *
+             * @hooked wc_no_products_found - 10
+             */
+            do_action( 'woocommerce_no_products_found' );
+        }
+
+        ?>
     </div>
 
     <?php
@@ -144,6 +131,7 @@ get_header( 'shop' );
             </div>
         </div>
     </section>
+
     <div class="btn-secondary go-to-builder md next">
         <p>Go to builder</p>
         <svg viewBox="0 0 36 16" fill="none">

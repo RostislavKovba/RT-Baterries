@@ -1,0 +1,62 @@
+2023-12-29T16:03:06+00:00 CRITICAL syntax error, unexpected ',' in W:\domains\rtb\wp-content\themes\rtbatteries\inc\RT_WooCommerce.php on line 84
+
+2023-12-29T18:25:17+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php:33
+Stack trace:
+#0 W:\domains\rtb\wp-includes\template.php(792): require()
+#1 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#2 W:\domains\rtb\wp-includes\general-template.php(206): locate_template()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\header.php(158): get_template_part()
+#4 W:\domains\rtb\wp-includes\template.php(790): require_once('W:\\domains\\rtb\\...')
+#5 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#6 W:\domains\rtb\wp-includes\general-template.php(48): locate_template()
+#7 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\single-product.php(22): get_header()
+#8 W:\domains\rtb\wp-includes\template-loader.php(106): include('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\wp-blog-header.php(19): require_once('W:\\domains\\rtb\\...')
+#10 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\...')
+#11 {mai in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php on line 33
+
+2023-12-29T18:25:28+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php:33
+Stack trace:
+#0 W:\domains\rtb\wp-includes\template.php(792): require()
+#1 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#2 W:\domains\rtb\wp-includes\general-template.php(206): locate_template()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\header.php(158): get_template_part()
+#4 W:\domains\rtb\wp-includes\template.php(790): require_once('W:\\domains\\rtb\\...')
+#5 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#6 W:\domains\rtb\wp-includes\general-template.php(48): locate_template()
+#7 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\single-product.php(22): get_header()
+#8 W:\domains\rtb\wp-includes\template-loader.php(106): include('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\wp-blog-header.php(19): require_once('W:\\domains\\rtb\\...')
+#10 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\...')
+#11 {mai in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php on line 33
+
+2023-12-29T18:30:52+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php:33
+Stack trace:
+#0 W:\domains\rtb\wp-includes\template.php(792): require()
+#1 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#2 W:\domains\rtb\wp-includes\general-template.php(206): locate_template()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\header.php(158): get_template_part()
+#4 W:\domains\rtb\wp-includes\template.php(790): require_once('W:\\domains\\rtb\\...')
+#5 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#6 W:\domains\rtb\wp-includes\general-template.php(48): locate_template()
+#7 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\single-product.php(22): get_header()
+#8 W:\domains\rtb\wp-includes\template-loader.php(106): include('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\wp-blog-header.php(19): require_once('W:\\domains\\rtb\\...')
+#10 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\...')
+#11 {mai in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php on line 33
+
+2023-12-29T18:32:40+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php:45
+Stack trace:
+#0 W:\domains\rtb\wp-includes\template.php(792): require()
+#1 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#2 W:\domains\rtb\wp-includes\general-template.php(206): locate_template()
+#3 W:\domains\rtb\wp-content\themes\rtbatteries\header.php(158): get_template_part()
+#4 W:\domains\rtb\wp-includes\template.php(790): require_once('W:\\domains\\rtb\\...')
+#5 W:\domains\rtb\wp-includes\template.php(725): load_template()
+#6 W:\domains\rtb\wp-includes\general-template.php(48): locate_template()
+#7 W:\domains\rtb\wp-content\themes\rtbatteries\woocommerce\single-product.php(22): get_header()
+#8 W:\domains\rtb\wp-includes\template-loader.php(106): include('W:\\domains\\rtb\\...')
+#9 W:\domains\rtb\wp-blog-header.php(19): require_once('W:\\domains\\rtb\\...')
+#10 W:\domains\rtb\index.php(17): require('W:\\domains\\rtb\\...')
+#11 {mai in W:\domains\rtb\wp-content\themes\rtbatteries\template-parts\menu-categories.php on line 45
+
